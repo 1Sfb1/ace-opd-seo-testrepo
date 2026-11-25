@@ -5,7 +5,7 @@ _Twee woonkamers in Hof 8, twee momenten van de dag_
 
 Het verschil zit in het moment waarop de zon binnenkomt. Een woonkamer op het oosten krijgt de zon in de ochtend. Een woonkamer op het westen krijgt hem later op de dag.
 
-In Lindehof zie je dat bij de twee voorbeeldwoningen van Hof 8. De ene woonkamer ligt op het oosten, de andere op het westen. Allebei lichte kamers, maar niet op hetzelfde moment.
+In Lindehof zie je dat bij de twee voorbeeldwoningen van Hof 8. De ene woonkamer ligt op het oosten, de andere op het westen. Ze krijgen het licht dus op een ander moment van de dag.
 
 ## De woonkamer op het oosten
 
@@ -28,6 +28,7 @@ Dat hangt af van je dag. Bedenk wanneer je het meest in de woonkamer zit, en kij
 - Metatitel: Woonkamer op het oosten of westen: wat is het verschil?
 - Metabeschrijving: Een woonkamer op het oosten heeft ochtendlicht, een woonkamer op het westen licht later op de dag. Ivo legt het verschil uit met Hof 8 in Lindehof.
 - Tags: Lindehof, lichtinval, woonkamer
+- URL-pad: /gids/lichtinval-woonkamer
 
 ## Voor de reviewer
 
@@ -51,23 +52,23 @@ Dat hangt af van je dag. Bedenk wanneer je het meest in de woonkamer zit, en kij
 <!-- pipeline:start -->
 ## Pad, beeld en controle
 
-_Dit blok schrijft de pipeline bij elke run opnieuw. Bewerk de rest van het document; dit blok niet._
+_Dit blok schrijft de pipeline bij elke run opnieuw. Wijzig het URL-pad onder 'Voor de website'; wijzigingen in dit blok worden niet overgenomen._
 
 - Sleutel: W50-M2-thema · editie W50 (aanleveren 2026-12-07T09:00:00+01:00, plaatsing 2026-12-09) · Ivo (M2) · thema
-- Voorgesteld URL-pad: /gids/lichtinval-woonkamer
+- URL-pad: /gids/lichtinval-woonkamer
 - Beeld: F2 hof8-woonkamer.jpg · rechten: vrijgegeven
 - Kopij: opgeslagen modeluitvoer kopij/W50-M2-thema-3e6d485c2f.json
 
 ### Controle
 
-- OK: Lopende tekst: 162 woorden (max 600).
+- OK: Lopende tekst: 166 woorden (max 600).
 - OK: URL-pad /gids/lichtinval-woonkamer is nieuw en uniek.
 - OK: Geen onbevestigde uitspraak in de lezerskopij.
-- OK: Elk getal staat in een geciteerde bron (8).
+- OK: Elk getal staat zo in een geciteerde bron.
 - OK: Beeld F2 (hof8-woonkamer.jpg) is vrijgegeven.
 
 ### Besluit
 
 - Status: afgewezen
-- Besluit: afgewezen op 2026-11-25T20:50:54+01:00, revisie r1. Reden: "Geef de lezer een concrete controle voor het volgende bezoek."
+- Besluit: afgewezen op 2026-11-25T21:13:47+01:00, voor revisie r1. Reden: "Geef de lezer een concrete controle voor het volgende bezoek."
 <!-- pipeline:end -->

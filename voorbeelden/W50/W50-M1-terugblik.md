@@ -26,6 +26,7 @@ In de bijgewerkte gids over de fietsberging lees je stap voor stap hoe je de hel
 - Metatitel: Weekbericht Koperkade: past je bakfiets in de berging?
 - Metabeschrijving: Noor over haar week aan de Koperkade: vier bezoekers vroegen of hun bakfiets door de bergingsdeur past. Zo meet je dat zelf.
 - Tags: Koperkade, bakfiets, bezichtiging
+- URL-pad: /weekbericht/2026-w50-koperkade
 
 ## Voor de reviewer
 
@@ -51,10 +52,10 @@ In de bijgewerkte gids over de fietsberging lees je stap voor stap hoe je de hel
 <!-- pipeline:start -->
 ## Pad, beeld en controle
 
-_Dit blok schrijft de pipeline bij elke run opnieuw. Bewerk de rest van het document; dit blok niet._
+_Dit blok schrijft de pipeline bij elke run opnieuw. Wijzig het URL-pad onder 'Voor de website'; wijzigingen in dit blok worden niet overgenomen._
 
 - Sleutel: W50-M1-terugblik · editie W50 (aanleveren 2026-12-07T09:00:00+01:00, plaatsing 2026-12-09) · Noor (M1) · terugblik
-- Voorgesteld URL-pad: /weekbericht/2026-w50-koperkade
+- URL-pad: /weekbericht/2026-w50-koperkade
 - Beeld: F1 meander-berging.jpg · rechten: vrijgegeven
 - Kopij: opgeslagen modeluitvoer kopij/W50-M1-terugblik-038ed0a6aa.json
 
@@ -63,11 +64,11 @@ _Dit blok schrijft de pipeline bij elke run opnieuw. Bewerk de rest van het docu
 - OK: Lopende tekst: 137 woorden (max 600).
 - OK: URL-pad /weekbericht/2026-w50-koperkade is nieuw en uniek.
 - OK: Geen onbevestigde uitspraak in de lezerskopij.
-- OK: Elk getal staat in een geciteerde bron (1,10).
+- OK: Elk getal staat zo in een geciteerde bron.
 - OK: Beeld F1 (meander-berging.jpg) is vrijgegeven.
 
 ### Besluit
 
 - Status: concept
-- Beslissen: `python run.py besluit W50-M1-terugblik goedgekeurd` of `python run.py besluit W50-M1-terugblik afgewezen --reden "..."` (werkmap: `--werkmap voorbeelden`)
+- Beslissen: `python run.py besluit W50-M1-terugblik goedgekeurd --werkmap voorbeelden` of `python run.py besluit W50-M1-terugblik afgewezen --reden "..." --werkmap voorbeelden`
 <!-- pipeline:end -->

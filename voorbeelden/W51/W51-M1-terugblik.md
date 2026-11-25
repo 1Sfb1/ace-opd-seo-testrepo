@@ -3,7 +3,7 @@
 
 _Noor over haar week aan de Koperkade_
 
-Ga op het terras staan en kijk om je heen. Waar valt de zon, en waar ligt de schaduw? Dat wilden twee bezoekers deze week zelf zien.
+Zet een stoel op het terras en ga even zitten. Zit je in de zon of in de schaduw? Dat wilden twee bezoekers deze week zelf weten.
 
 Ik had drie bezichtigingen aan de Koperkade. Twee bezoekers wilden het terras op verschillende tijdstippen bekijken. Een goed plan, want gemeten zonuren hebben we niet. Wat je zelf ziet, is dan je beste informatie.
 
@@ -26,6 +26,7 @@ In de nieuwe gids over terrassen op het zuiden en het oosten lees je waar je ver
 - Metatitel: Weekbericht Koperkade: wanneer komt de zon op het terras?
 - Metabeschrijving: Noor over haar week aan de Koperkade: bezoekers wilden het terras op verschillende tijdstippen zien. Zo vergelijk je zon en schaduw zelf.
 - Tags: Koperkade, terras, bezichtiging
+- URL-pad: /weekbericht/2026-w51-koperkade
 
 ## Voor de reviewer
 
@@ -50,10 +51,10 @@ In de nieuwe gids over terrassen op het zuiden en het oosten lees je waar je ver
 <!-- pipeline:start -->
 ## Pad, beeld en controle
 
-_Dit blok schrijft de pipeline bij elke run opnieuw. Bewerk de rest van het document; dit blok niet._
+_Dit blok schrijft de pipeline bij elke run opnieuw. Wijzig het URL-pad onder 'Voor de website'; wijzigingen in dit blok worden niet overgenomen._
 
 - Sleutel: W51-M1-terugblik · editie W51 (aanleveren 2026-12-14T09:00:00+01:00, plaatsing 2026-12-16) · Noor (M1) · terugblik
-- Voorgesteld URL-pad: /weekbericht/2026-w51-koperkade
+- URL-pad: /weekbericht/2026-w51-koperkade
 - Beeld: F3 terras-huis3.jpg · rechten: vrijgegeven
 - Kopij: opgeslagen modeluitvoer kopij/W51-M1-terugblik-42f81704e6.json
 
@@ -62,11 +63,11 @@ _Dit blok schrijft de pipeline bij elke run opnieuw. Bewerk de rest van het docu
 - OK: Lopende tekst: 141 woorden (max 600).
 - OK: URL-pad /weekbericht/2026-w51-koperkade is nieuw en uniek.
 - OK: Geen onbevestigde uitspraak in de lezerskopij.
-- OK: Elk getal staat in een geciteerde bron (3, 4).
+- OK: Elk getal staat zo in een geciteerde bron.
 - OK: Beeld F3 (terras-huis3.jpg) is vrijgegeven.
 
 ### Besluit
 
 - Status: concept
-- Beslissen: `python run.py besluit W51-M1-terugblik goedgekeurd` of `python run.py besluit W51-M1-terugblik afgewezen --reden "..."` (werkmap: `--werkmap voorbeelden`)
+- Beslissen: `python run.py besluit W51-M1-terugblik goedgekeurd --werkmap voorbeelden` of `python run.py besluit W51-M1-terugblik afgewezen --reden "..." --werkmap voorbeelden`
 <!-- pipeline:end -->

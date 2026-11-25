@@ -20,7 +20,7 @@ def item(kind="thema", path="/gids/nieuw-onderwerp", keuze="nieuw", beeld="vrijg
 
 def doc(body="Meet je fiets. Je hebt 1,10 m.", claims="| x | B1 | y |"):
     return (f"# Kop\n\n_Onderkop_\n\n{body}\n\n**Over de auteur.** Bio.\n\n{r.READER_END}\n\n## Voor de website\n\n"
-            f"- Metatitel: Titel\n- Metabeschrijving: Beschrijving\n- Tags: a, b, c\n\n## Voor de reviewer\n\n"
+            f"- Metatitel: Titel\n- Metabeschrijving: Beschrijving\n- Tags: a, b, c\n- URL-pad: /gids/nieuw-onderwerp\n\n## Voor de reviewer\n\n"
             f"### Claims en bronnen\n\n| Claim | Bron | Bronregel |\n|---|---|---|\n{claims}\n")
 
 
@@ -35,7 +35,7 @@ class Checks(unittest.TestCase):
 
     def test_unconfirmed_price_claim_is_an_error(self):
         res = r.check(SRC, item(), doc("De prijzen gingen 12% omhoog, zeg je?"), CFG, {}, SITE)
-        self.assertTrue(any("onbevestigde" in t for t in levels(res, "FOUT")))
+        self.assertTrue(any("X1" in t for t in levels(res, "FOUT")))
 
     def test_claim_citing_x1_is_an_error(self):
         res = r.check(SRC, item(), doc(claims="| prijs | X1 | y |"), CFG, {}, SITE)
@@ -72,6 +72,52 @@ class Checks(unittest.TestCase):
     def test_image_task(self):
         res = r.check(SRC, item(beeld="beeldtaak"), doc(), CFG, {}, SITE)
         self.assertTrue(any("Beeldtaak" in t for t in levels(res, "AANDACHT")))
+
+    def test_spelled_out_percentage_and_price_rise(self):
+        res = r.check(SRC, item(), doc("De prijzen zijn met twaalf procent gestegen."), CFG, {}, SITE)
+        self.assertTrue(any("percentage" in t and "prijsontwikkeling" in t for t in levels(res, "FOUT")))
+
+    def test_number_needs_its_own_context(self):
+        # 'Hof 8' is in B2, but '8 uur zon' is not
+        res = r.check(SRC, item(), doc("Bij Hof 8 krijgt de kamer 8 uur zon.", claims="| x | B2 | y |"), CFG, {}, SITE)
+        self.assertTrue(any("8 uur" in t for t in levels(res, "AANDACHT")))
+
+    def test_part_of_a_number_is_not_the_number(self):
+        res = r.check(SRC, item(), doc("Reken op 10 cm speling. Je hebt 1,10 m."), CFG, {}, SITE)
+        self.assertTrue(any("10 cm" in t for t in levels(res, "AANDACHT")))
+
+    def test_spelled_out_measure(self):
+        res = r.check(SRC, item(), doc("De kamer krijgt zes uur zon, zeg je."), CFG, {}, SITE)
+        self.assertTrue(any("zes uur" in t for t in levels(res, "AANDACHT")))
+
+    def test_update_without_change_table(self):
+        it = item(path="/gids/fietsberging", keuze="update")
+        it["pagina"] = {"pad": "/gids/fietsberging"}
+        res = r.check(SRC, it, doc(), CFG, {}, SITE)
+        self.assertTrue(any("wijzigingentabel" in t for t in levels(res, "AANDACHT")))
+
+
+class Robustness(unittest.TestCase):
+    def test_new_cleared_photo_beats_expired_one(self):
+        src = {**SRC, "beeldregister": SRC["beeldregister"] + [
+            {"id": "F5", "bestand": "nieuw.jpg", "gebied": "Lindehof", "onderwerp": "route naar fietsenstalling",
+             "recht": "vrijgegeven"}]}
+        got = r.pick_image(src, "Lindehof", "route naar de fietsenstalling")
+        self.assertEqual((got["beeld"], got["beeldstatus"]), ("F5", "vrijgegeven"))
+
+    def test_later_week_first_keeps_calendar_order(self):
+        qid, why, clash = r.choose_question(SRC, {"docs": {}, "feedback": {}}, "W51-M2-thema", "W51", "M2")
+        self.assertEqual((qid, clash), ("Q4", False))
+        self.assertIn("W50-M2-thema", why)
+
+    def test_input_folders_are_not_workspaces(self):
+        for name in ("invoer", "kopij", "tests"):
+            with self.assertRaises(r.PipelineError):
+                r.Workspace(name)
+
+    def test_examples_need_confirmation_to_reset(self):
+        with self.assertRaises(r.PipelineError):
+            r.reset("voorbeelden")
 
 
 class Planning(unittest.TestCase):

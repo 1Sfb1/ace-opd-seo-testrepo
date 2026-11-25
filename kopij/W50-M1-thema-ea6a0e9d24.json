@@ -3,10 +3,10 @@
   "vingerafdruk": "ea6a0e9d24",
   "model": "Claude Opus 5.5 (claude-opus-5-5) in Claude Code, 25-11-2026; antwoord op de prompt met dezelfde vingerafdruk",
   "prompt": "zie W50-M1-thema-ea6a0e9d24.txt in de map prompts/ van de werkmap",
-  "kop": "Past je bakfiets in de berging van Meander?",
+  "kop": "Past je fiets of bakfiets in de berging van Meander?",
   "onderkop": "Meet niet alleen de buitenste deur, maar de hele route tot in je berging",
   "tekst": "Zet je bakfiets even neer en pak een meetlint. Meet de breedste plek van je fiets. Loop daarna vanaf de entree naar de berging en meet elke deur op die route. Pas als je fiets door alle deuren past, weet je dat hij in je berging komt.\n\n## Wat we al weten\n\nDe bergingen van gebouw Meander bereik je via de buitenste bergingsdeur. Die deur heeft een vrije doorgang van 1,10 m. Is je fiets smaller, dan komt hij door die eerste deur.\n\nDaarmee ben je er nog niet. Na de buitenste deur volgt een binnenste deur, en die is nog niet ingemeten. Die maat controleer je dus zelf.\n\n## Zo controleer je de hele route\n\n1. Meet thuis je bakfiets op de breedste plek en schrijf die maat op.\n2. Neem het meetlint mee naar de bezichtiging.\n3. Begin bij de entree. Loop de route die je straks met je fiets neemt.\n4. Kijk bij de buitenste bergingsdeur of je fiets past. Hier heb je 1,10 m.\n5. Meet de binnenste deur. Zet de deur helemaal open en meet de opening op de smalste plek.\n6. Kom je daarna nog een deur of een smalle doorgang tegen? Meet die ook.\n\nIs één van die maten kleiner dan je fiets, dan past hij niet. Schrijf alle maten op, dan vergelijk je thuis rustig.\n\n## Twijfel je?\n\nNeem je meetlint mee naar de bezichtiging. Dan lopen we de route samen.",
-  "metatitel": "Past je bakfiets in de berging van Meander? Zo meet je het",
+  "metatitel": "Past je fiets of bakfiets in de berging van Meander?",
   "metabeschrijving": "De buitenste bergingsdeur van Meander heeft 1,10 m vrije doorgang; de binnenste deur is niet ingemeten. Zo controleer je de hele route.",
   "tags": [
     "Koperkade",
@@ -62,7 +62,7 @@
     {
       "soort": "vervangen",
       "passage": "Titel 'Past je fiets in de berging van Meander?'",
-      "toelichting": "Wordt 'Past je bakfiets ...', zoals de zoekvraag."
+      "toelichting": "Wordt 'Past je fiets of bakfiets ...': de pagina blijft over alle fietsen gaan en sluit aan op zoekvraag Q1."
     },
     {
       "soort": "vervangen",
@@ -75,5 +75,7 @@
       "toelichting": "Past nog en is vrijgegeven."
     }
   ],
-  "feedback_verwerkt": []
+  "feedback_verwerkt": [],
+  "basis_vingerafdruk": "ea6a0e9d24",
+  "herzien": "25-11-2026, na een blinde beoordeling, door dezelfde Claude-sessie: Kop, metatitel en wijzigingentabel: de pagina blijft over fiets en bakfiets gaan."
 }

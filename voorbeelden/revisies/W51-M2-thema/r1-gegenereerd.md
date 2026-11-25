@@ -17,15 +17,13 @@ Je loopt de route met je fiets aan de hand. Bij de haakse bocht merk je dan of j
 
 ## Controle voor je volgende bezoek
 
-1. Meet thuis je fiets op de breedste plek en schrijf de maat op.
-2. Neem een meetlint mee.
-3. Begin bij de hoofdentree en tel de deuren tot de fietsenstalling. Kom je er meer tegen dan twee, schrijf dat dan op.
-4. Zet elke deur helemaal open en meet de opening op de smalste plek.
-5. Kijk of een deur vanzelf dichtvalt. Dan heb je een hand nodig om hem open te houden.
-6. Blijf staan bij de haakse bocht. Kijk of er genoeg ruimte is om je fiets de hoek om te krijgen. Twijfel je, meet dan de ruimte in de bocht.
-7. Leg alle maten naast de maat van je fiets.
+Neem een meetlint mee en loop de route twee keer. De eerste keer kijk je alleen. De tweede keer meet je.
 
-Past je fiets door beide deuren en om de bocht? Dan weet je dat deze route voor jou werkt.
+- Bij de eerste deur zet je de deur helemaal open en meet je de opening op de smalste plek. Valt hij vanzelf dicht, dan heb je straks een hand nodig om hem open te houden.
+- Bij de haakse bocht kijk je of er ruimte is om je fiets in één beweging de hoek om te krijgen. Twijfel je, meet dan de ruimte in de bocht.
+- Bij de tweede deur meet je opnieuw de opening.
+
+Leg die maten thuis naast de breedte van je fiets. Is de smalste deur breder dan je fiets en kom je om de bocht, dan werkt deze route voor jou.
 
 **Over de auteur.** Ivo begeleidt doorstromers in Lindehof.
 
@@ -36,11 +34,12 @@ Past je fiets door beide deuren en om de bocht? Dan weet je dat deze route voor 
 - Metatitel: Route naar de fietsenstalling testen: zo doe je dat
 - Metabeschrijving: Twee deuren en een haakse bocht: Ivo laat zien hoe je in Lindehof de route van de entree naar de fietsenstalling test, met of zonder fiets.
 - Tags: Lindehof, fietsenstalling, looproute
+- URL-pad: /gids/looproute-fietsenstalling
 
 ## Voor de reviewer
 
 - Aanleiding: zoekvraag Q4: "Hoe test ik de route van de entree naar een fietsenstalling?" (aanwijzing: Neem de lezer vanaf de entree mee langs deuren en de bocht.)
-- Paginakeuze: nieuwe pagina. Voorkeur Q2 is in 2026-12 al gebruikt door W50-M2-thema (status: afgewezen; ook een afgewezen concept houdt zijn plaats). Alternatief Q4 uit de onderwerpkalender gekozen. Geen bestaande pagina voor deze zoekvraag: nieuwe pagina.
+- Paginakeuze: nieuwe pagina. Voorkeur Q2 is in 2026-12 al bezet door W50-M2-thema (status: afgewezen; ook een afgewezen concept houdt zijn plaats). Alternatief Q4 uit de onderwerpkalender gekozen. Geen bestaande pagina voor deze zoekvraag: nieuwe pagina.
 - Waarom nu: Drie van de vijf bezoekers vroegen deze week naar de route naar de fietsenstalling (N4). Q4 is het alternatief uit de kalender, omdat Q2 in december al gebruikt is.
 
 ### Claims en bronnen
@@ -59,4 +58,4 @@ Past je fiets door beide deuren en om de bocht? Dan weet je dat deze route voor 
 
 ### Verwerkte feedback
 
-- FB-W50-M2-thema: Sectie 'Controle voor je volgende bezoek': zeven stappen die de lezer bij het volgende bezoek zelf uitvoert, langs de twee deuren en de haakse bocht (B4).
+- FB-W50-M2-thema: Sectie 'Controle voor je volgende bezoek': de lezer loopt de route twee keer en meet bij beide deuren en de haakse bocht (B4); thuis vergelijkt de lezer de maten met de fiets.

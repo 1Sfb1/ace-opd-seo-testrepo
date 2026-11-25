@@ -33,6 +33,7 @@ Zo weet je na twee bezoeken of het terras zon heeft wanneer jij buiten wilt zitt
 - Metatitel: Terras op het zuiden of oosten: waar let je op?
 - Metabeschrijving: Een terras op het zuiden of het oosten heeft op andere momenten zon. Noor laat zien hoe je dat tijdens de bezichtiging aan de Koperkade controleert.
 - Tags: Koperkade, terras, zon en schaduw
+- URL-pad: /gids/terrasligging
 
 ## Voor de reviewer
 
@@ -62,10 +63,10 @@ Zo weet je na twee bezoeken of het terras zon heeft wanneer jij buiten wilt zitt
 <!-- pipeline:start -->
 ## Pad, beeld en controle
 
-_Dit blok schrijft de pipeline bij elke run opnieuw. Bewerk de rest van het document; dit blok niet._
+_Dit blok schrijft de pipeline bij elke run opnieuw. Wijzig het URL-pad onder 'Voor de website'; wijzigingen in dit blok worden niet overgenomen._
 
 - Sleutel: W51-M1-thema · editie W51 (aanleveren 2026-12-14T09:00:00+01:00, plaatsing 2026-12-16) · Noor (M1) · thema
-- Voorgesteld URL-pad: /gids/terrasligging
+- URL-pad: /gids/terrasligging
 - Beeld: F3 terras-huis3.jpg · rechten: vrijgegeven
 - Kopij: opgeslagen modeluitvoer kopij/W51-M1-thema-1927b26971.json
 
@@ -74,11 +75,11 @@ _Dit blok schrijft de pipeline bij elke run opnieuw. Bewerk de rest van het docu
 - OK: Lopende tekst: 257 woorden (max 600).
 - OK: URL-pad /gids/terrasligging is nieuw en uniek.
 - OK: Geen onbevestigde uitspraak in de lezerskopij.
-- OK: Elk getal staat in een geciteerde bron (3, 4).
+- OK: Elk getal staat zo in een geciteerde bron.
 - OK: Beeld F3 (terras-huis3.jpg) is vrijgegeven.
 
 ### Besluit
 
 - Status: concept
-- Beslissen: `python run.py besluit W51-M1-thema goedgekeurd` of `python run.py besluit W51-M1-thema afgewezen --reden "..."` (werkmap: `--werkmap voorbeelden`)
+- Beslissen: `python run.py besluit W51-M1-thema goedgekeurd --werkmap voorbeelden` of `python run.py besluit W51-M1-thema afgewezen --reden "..." --werkmap voorbeelden`
 <!-- pipeline:end -->

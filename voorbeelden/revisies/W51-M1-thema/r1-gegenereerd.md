@@ -33,6 +33,7 @@ Zo weet je na twee bezoeken of het terras zon heeft wanneer jij buiten wilt zitt
 - Metatitel: Terras op het zuiden of oosten: waar let je op?
 - Metabeschrijving: Een terras op het zuiden of het oosten heeft op andere momenten zon. Noor laat zien hoe je dat tijdens de bezichtiging aan de Koperkade controleert.
 - Tags: Koperkade, terras, zon en schaduw
+- URL-pad: /gids/terrasligging
 
 ## Voor de reviewer
 

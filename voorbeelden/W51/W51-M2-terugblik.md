@@ -20,6 +20,7 @@ Hoe breed de deuren zijn, is niet vastgelegd. Loop de route dus zelf, het liefst
 - Metatitel: Weekbericht Lindehof: van de voordeur naar je fiets
 - Metabeschrijving: Ivo over zijn week in Lindehof: drie bezoekers vroegen naar de route naar de fietsenstalling. Twee manieren om die route te bekijken.
 - Tags: Lindehof, fietsenstalling, bezichtiging
+- URL-pad: /weekbericht/2026-w51-lindehof
 
 ## Voor de reviewer
 
@@ -44,10 +45,10 @@ Hoe breed de deuren zijn, is niet vastgelegd. Loop de route dus zelf, het liefst
 <!-- pipeline:start -->
 ## Pad, beeld en controle
 
-_Dit blok schrijft de pipeline bij elke run opnieuw. Bewerk de rest van het document; dit blok niet._
+_Dit blok schrijft de pipeline bij elke run opnieuw. Wijzig het URL-pad onder 'Voor de website'; wijzigingen in dit blok worden niet overgenomen._
 
 - Sleutel: W51-M2-terugblik · editie W51 (aanleveren 2026-12-14T09:00:00+01:00, plaatsing 2026-12-16) · Ivo (M2) · terugblik
-- Voorgesteld URL-pad: /weekbericht/2026-w51-lindehof
+- URL-pad: /weekbericht/2026-w51-lindehof
 - Beeld: geen bruikbaar beeld · beeldtaak: F4 (hof8-fietsroute.jpg) past inhoudelijk, maar de rechten zijn verlopen. Zoek of laat een vrijgegeven beeld maken over: route naar fietsenstalling (Lindehof).
 - Kopij: opgeslagen modeluitvoer kopij/W51-M2-terugblik-378f001a54.json
 
@@ -61,5 +62,5 @@ _Dit blok schrijft de pipeline bij elke run opnieuw. Bewerk de rest van het docu
 ### Besluit
 
 - Status: concept
-- Beslissen: `python run.py besluit W51-M2-terugblik goedgekeurd` of `python run.py besluit W51-M2-terugblik afgewezen --reden "..."` (werkmap: `--werkmap voorbeelden`)
+- Beslissen: `python run.py besluit W51-M2-terugblik goedgekeurd --werkmap voorbeelden` of `python run.py besluit W51-M2-terugblik afgewezen --reden "..." --werkmap voorbeelden`
 <!-- pipeline:end -->

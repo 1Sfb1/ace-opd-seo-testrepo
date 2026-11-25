@@ -1,5 +1,5 @@
 <!-- sleutel: W50-M1-thema -->
-# Past je bakfiets in de berging van Meander?
+# Past je fiets of bakfiets in de berging van Meander?
 
 _Meet niet alleen de buitenste deur, maar de hele route tot in je berging_
 
@@ -32,9 +32,10 @@ Neem je meetlint mee naar de bezichtiging. Dan lopen we de route samen.
 
 ## Voor de website
 
-- Metatitel: Past je bakfiets in de berging van Meander? Zo meet je het
+- Metatitel: Past je fiets of bakfiets in de berging van Meander?
 - Metabeschrijving: De buitenste bergingsdeur van Meander heeft 1,10 m vrije doorgang; de binnenste deur is niet ingemeten. Zo controleer je de hele route.
 - Tags: Koperkade, fietsberging, bakfiets
+- URL-pad: /gids/fietsberging
 
 ## Voor de reviewer
 
@@ -65,17 +66,17 @@ Neem je meetlint mee naar de bezichtiging. Dan lopen we de route samen.
 | vervangen | Is je fiets smaller dan 1,10 m, dan past hij door de deur en kun je hem in je berging zetten. | Te stellig: de binnenste deur is niet ingemeten (B1). Nu: 'dan komt hij door die eerste deur', gevolgd door de controle van de hele route. |
 | vervangen | Twijfel je? Neem dan een meetlint mee naar de bezichtiging. | Het meetlint staat nu in stap 2. 'Twijfel je?' wordt een uitnodiging om de route samen te lopen. |
 | toegevoegd | Eerste alinea en het stappenplan 'Zo controleer je de hele route' | Beantwoordt zoekvraag Q1 en de aanwijzing: een controle voor de volledige route. |
-| vervangen | Titel 'Past je fiets in de berging van Meander?' | Wordt 'Past je bakfiets ...', zoals de zoekvraag. |
+| vervangen | Titel 'Past je fiets in de berging van Meander?' | Wordt 'Past je fiets of bakfiets ...': de pagina blijft over alle fietsen gaan en sluit aan op zoekvraag Q1. |
 | vervangen | Metatitel, metabeschrijving en tags | Bakfiets en de hele route erin. Tag Koperkade blijft; 'berging' en 'fiets' worden 'fietsberging' en 'bakfiets'. |
 | behouden | Beeld F1 (meander-berging.jpg) | Past nog en is vrijgegeven. |
 
 <!-- pipeline:start -->
 ## Pad, beeld en controle
 
-_Dit blok schrijft de pipeline bij elke run opnieuw. Bewerk de rest van het document; dit blok niet._
+_Dit blok schrijft de pipeline bij elke run opnieuw. Wijzig het URL-pad onder 'Voor de website'; wijzigingen in dit blok worden niet overgenomen._
 
 - Sleutel: W50-M1-thema · editie W50 (aanleveren 2026-12-07T09:00:00+01:00, plaatsing 2026-12-09) · Noor (M1) · thema
-- Voorgesteld URL-pad: /gids/fietsberging
+- URL-pad: /gids/fietsberging
 - Beeld: F1 meander-berging.jpg · rechten: vrijgegeven
 - Kopij: opgeslagen modeluitvoer kopij/W50-M1-thema-ea6a0e9d24.json
 
@@ -84,13 +85,13 @@ _Dit blok schrijft de pipeline bij elke run opnieuw. Bewerk de rest van het docu
 - OK: Lopende tekst: 246 woorden (max 600).
 - OK: URL-pad /gids/fietsberging: update van een bestaande pagina.
 - OK: Geen onbevestigde uitspraak in de lezerskopij.
-- OK: Elk getal staat in een geciteerde bron (1,10).
+- OK: Elk getal staat zo in een geciteerde bron.
 - OK: Beeld F1 (meander-berging.jpg) is vrijgegeven.
 
 ### Besluit
 
 - Status: goedgekeurd
-- Besluit: goedgekeurd op 2026-11-25T20:50:54+01:00, revisie r2
+- Besluit: goedgekeurd op 2026-11-25T21:13:47+01:00, voor revisie r2
 - Toegevoegd door de redacteur: "Meet thuis ook hoe breed je stuur is."
 - Volledige wijziging: voorbeelden/revisies/W50-M1-thema/diff-r1-r2.diff
 <!-- pipeline:end -->

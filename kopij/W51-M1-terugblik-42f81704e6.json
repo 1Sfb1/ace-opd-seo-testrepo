@@ -5,7 +5,7 @@
   "prompt": "zie W51-M1-terugblik-42f81704e6.txt in de map prompts/ van de werkmap",
   "kop": "Kijk zelf wanneer de zon op het terras komt",
   "onderkop": "Noor over haar week aan de Koperkade",
-  "tekst": "Ga op het terras staan en kijk om je heen. Waar valt de zon, en waar ligt de schaduw? Dat wilden twee bezoekers deze week zelf zien.\n\nIk had drie bezichtigingen aan de Koperkade. Twee bezoekers wilden het terras op verschillende tijdstippen bekijken. Een goed plan, want gemeten zonuren hebben we niet. Wat je zelf ziet, is dan je beste informatie.\n\nAan de Koperkade verschilt het per huis. Het terras van huis 3 ligt op het zuiden, dat van huis 4 op het oosten.\n\nWil je het ook zo doen?\n\n- Noteer bij je eerste bezoek hoe laat het is en waar de zon op het terras ligt.\n- Kom op een ander tijdstip terug en kijk opnieuw.\n- Leg de twee momenten naast elkaar.\n\nIn de nieuwe gids over terrassen op het zuiden en het oosten lees je waar je verder op let.",
+  "tekst": "Zet een stoel op het terras en ga even zitten. Zit je in de zon of in de schaduw? Dat wilden twee bezoekers deze week zelf weten.\n\nIk had drie bezichtigingen aan de Koperkade. Twee bezoekers wilden het terras op verschillende tijdstippen bekijken. Een goed plan, want gemeten zonuren hebben we niet. Wat je zelf ziet, is dan je beste informatie.\n\nAan de Koperkade verschilt het per huis. Het terras van huis 3 ligt op het zuiden, dat van huis 4 op het oosten.\n\nWil je het ook zo doen?\n\n- Noteer bij je eerste bezoek hoe laat het is en waar de zon op het terras ligt.\n- Kom op een ander tijdstip terug en kijk opnieuw.\n- Leg de twee momenten naast elkaar.\n\nIn de nieuwe gids over terrassen op het zuiden en het oosten lees je waar je verder op let.",
   "metatitel": "Weekbericht Koperkade: wanneer komt de zon op het terras?",
   "metabeschrijving": "Noor over haar week aan de Koperkade: bezoekers wilden het terras op verschillende tijdstippen zien. Zo vergelijk je zon en schaduw zelf.",
   "tags": [
@@ -37,5 +37,7 @@
     "Mag de laatste zin een link krijgen naar de nieuwe terrasgids (/gids/terrasligging)?"
   ],
   "wijzigingen": [],
-  "feedback_verwerkt": []
+  "feedback_verwerkt": [],
+  "basis_vingerafdruk": "42f81704e6",
+  "herzien": "25-11-2026, na een blinde beoordeling, door dezelfde Claude-sessie: Openingsalinea veranderd, zodat die niet bijna gelijk is aan de opening van W51-M1-thema."
 }

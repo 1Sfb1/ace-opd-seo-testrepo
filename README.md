@@ -45,7 +45,11 @@ Daarnaast schrijft de run:
 - `uitvoer/prompts/`: de prompt per concept (zie "Hoe de tekst ontstaat").
 
 Een schone kopie van deze repository heeft een lege `uitvoer/`. Wil je opnieuw beginnen, gebruik dan
-`python run.py reset`. Dat maakt alleen `uitvoer/` leeg; `voorbeelden/` blijft staan.
+`python run.py reset`. Dat maakt alleen `uitvoer/` leeg; `voorbeelden/` blijft staan (die wis je alleen met
+`reset --werkmap voorbeelden --ja`). `invoer`, `kopij` en `tests` kunnen geen werkmap zijn.
+
+Draai de weken in volgorde. Draai je toch eerst W51, dan waarschuwt de pipeline dat W50 nog ontbreekt. De
+onderwerpkalender houdt de plek van W50 dan vrij, zodat W50 later gewoon Q1 en Q2 krijgt.
 
 ## Een concept lezen
 
@@ -62,19 +66,27 @@ Elk document heeft drie delen:
 
 De controles melden met `OK`, `AANDACHT` of `FOUT`:
 
-- ontbrekende kop, onderkop, metatitel, metabeschrijving, bio, of geen drie tags;
+- ontbrekende kop, onderkop, metatitel, metabeschrijving, URL-pad, bio, of geen drie tags;
 - te lange metatitel (meer dan 60 tekens) of metabeschrijving (meer dan 160 tekens), en meer dan 600 woorden;
 - een URL-pad dat al bestaat in `invoer/sitemap.json` of dat een ander concept ook voorstelt;
-- de onbevestigde prijsclaim uit X1 in de lezerskopij, of een claim die naar X1 verwijst;
-- een getal in de tekst dat niet in een geciteerde bron staat;
+- een percentage of prijsontwikkeling in de lezerskopij, ook uitgeschreven ("twaalf procent", "gestegen"), of een
+  claim die naar X1 verwijst;
+- een getal of maat die niet zo in een geciteerde bron staat. Het buurwoord telt mee: "1,10 m" en "huis 3" passen bij
+  hun bron, maar "8 uur zon" niet, ook al staat "Hof 8" in de bron. Uitgeschreven maten zoals "zes uur" tellen ook;
+- een update zonder tabel met wijzigingen ten opzichte van de huidige pagina;
 - 'u' in plaats van 'je';
 - geen vrijgegeven, passend beeld (dan komt er een beeldtaak);
-- kopij uit het sjabloon in plaats van uit opgeslagen modeluitvoer.
+- kopij uit het sjabloon in plaats van uit opgeslagen modeluitvoer, of opgeslagen kopij die bij andere feedback
+  hoort;
+- tekst die na een besluit nog is bewerkt.
 
 ## Bewerken, goedkeuren en afwijzen
 
 **Bewerken**: open het Markdown-bestand in een editor en pas de tekst aan, alles behalve het blok
-"Pad, beeld en controle". Een volgende run laat je tekst staan.
+"Pad, beeld en controle". Een volgende run laat je tekst staan. Een ander URL-pad zet je onder "Voor de website"
+(`- URL-pad: ...`); de pipeline neemt het over en controleert het opnieuw op dubbelingen. Een wijziging in het blok
+zelf neemt de pipeline niet over: die bewaart je wijziging in `uitvoer/revisies/<sleutel>/pipelineblok-bewerkt-N.md`
+en meldt dat in het document.
 
 **Goedkeuren** (ook na een bewerking):
 
@@ -95,7 +107,9 @@ Na een besluit:
   `uitvoer/revisies/<sleutel>/diff-r1-rN.diff`;
 - blijft de afgewezen tekst staan;
 - gaat een afwijzing of bewerking van een thema als feedback mee naar het volgende thema van dezelfde makelaar.
-  Het log zegt in `feedback_verwerkt` waar die feedback is verwerkt.
+  Het log zegt in `feedback_verwerkt` waar die feedback is verwerkt;
+- leidt een latere bewerking tot de melding "De tekst is na het besluit bewerkt ... Beslis opnieuw" en de status
+  "goedgekeurd (na besluit bewerkt)" in het log.
 
 **De twee besluiten uit bijlage B in één keer**: `python run.py bijlage-b`. Dat voegt in Noors thema de zin "Meet thuis
 ook hoe breed je stuur is." toe (na stap 1), keurt dat stuk goed, en wijst Ivo's thema af met de reden uit bijlage B.
@@ -114,7 +128,8 @@ Een tweede run voor dezelfde week:
   "concept (handmatig bewerkt)" en een eigen revisie;
 - ververst alleen het blok "Pad, beeld en controle". Een nieuw dubbel pad of een nieuw vrijgegeven beeld zie je dus
   meteen;
-- houdt de zoekvraag die eerder voor een thema is gekozen.
+- houdt de zoekvraag die eerder voor een thema is gekozen;
+- zet een verwijderd document terug uit de laatste revisie, met tekst en besluit.
 
 ## Zo werkt de planning
 
@@ -125,8 +140,9 @@ Een tweede run voor dezelfde week:
 - **Update of nieuw**: heeft de zoekvraag een bestaande pagina (Q1 met `/gids/fietsberging`), dan wordt het een update
   op hetzelfde pad. De huidige tekst uit bijlage C gaat mee in de prompt, en het document toont per passage wat er
   behouden, vervangen of toegevoegd is. Anders wordt het een nieuwe pagina onder `/gids/`.
-- **Beeld**: het beste beeld uit het register voor het gebied en het onderwerp van de makelaar. Is dat beeld niet
-  vrijgegeven (F4 is verlopen), dan krijgt het stuk geen beeld maar een beeldtaak.
+- **Beeld**: het best passende beeld uit het register voor het gebied en het onderwerp van de makelaar. Passen er
+  meer even goed, dan wint een vrijgegeven beeld, en daarvan het laatst geregistreerde. Is geen enkel best passend
+  beeld vrijgegeven (F4 is verlopen), dan krijgt het stuk geen beeld maar een beeldtaak.
 - **Bronnen**: alleen vrijgegeven feiten uit het gebied van de makelaar mogen in de tekst. X1 staat in de prompt
   alleen als "onbevestigd" en komt in de reviewer-sectie terug als open redactievraag.
 
@@ -150,12 +166,17 @@ stem van de makelaar, de notitie of zoekvraag, de vrijgegeven feiten, X1 als onb
 pagina, en eventuele feedback van de redacteur. De vingerafdruk is een hash van die prompt.
 
 **Modus `opgeslagen`** (standaard, geen sleutel nodig): staat er in `kopij/` een modelantwoord met dezelfde sleutel en
-vingerafdruk, dan gebruikt de pipeline dat. De acht antwoorden in `kopij/` zijn geschreven door Claude (Anthropic,
-Claude Opus 5.5) in een Claude Code-sessie op 25 november 2026, als antwoord op precies deze prompts. De beoordelaar
+vingerafdruk, dan gebruikt de pipeline dat. Is er alleen een antwoord voor dezelfde bronnen en hetzelfde onderwerp
+maar met andere feedback (bijvoorbeeld omdat de redacteur iets anders aanpaste dan in bijlage B), dan gebruikt de
+pipeline dat dichtstbijzijnde antwoord en meldt `AANDACHT: De opgeslagen kopij is geschreven bij andere feedback`.
+De feedback telt dan niet als verwerkt; de redacteur controleert het of laat het stuk herschrijven. De acht antwoorden in `kopij/` zijn geschreven door Claude (Anthropic,
+Claude Opus 5.5) in een Claude Code-sessie op 25 november 2026, als antwoord op precies deze prompts. Vier ervan
+zijn na een blinde beoordeling op dezelfde dag op één punt herschreven; het veld `herzien` in het bestand zegt wat. De beoordelaar
 heeft daardoor geen sleutel, account of betaalde dienst nodig, en de voorbeelden zijn reproduceerbaar.
 
 **Sjabloon als vangnet**: verandert de invoer zodat er geen passend antwoord is (bijvoorbeeld een andere week, of W51
-draaien vóór de besluiten van W50), dan maakt de pipeline een eenvoudig concept uit de bronzinnen. Dat concept is als
+draaien in een nieuwe werkmap zonder passend antwoord), dan maakt de pipeline een eenvoudig concept uit de
+bronzinnen die bij het onderwerp passen. Dat concept is als
 `AANDACHT: Kopij uit het sjabloon` gemarkeerd. Je kunt het sjabloon ook afdwingen met `--modus sjabloon`.
 
 **Nieuwe tekst laten schrijven**: geef de prompt uit `uitvoer/prompts/` aan een taalmodel naar keuze. Sla het
@@ -208,7 +229,10 @@ uit, met de commando's uit deze README:
 5. een extra pad in de sitemap, daarna W51 opnieuw;
 6. de overdracht: een cijfer terugvolgen, een handmatige bewerking die blijft staan, een beeldtaak afhandelen.
 
-Het script controleert telkens het waarneembare resultaat en eindigt met "34 van 34 controles geslaagd". In deze map
+Daarna volgt proef 7 met randgevallen buiten het scenario: een andere bewerking dan in bijlage B, uitgeschreven
+percentages en maten, bewerken na goedkeuren, een verwijderd document, een eigen URL-pad, een wijziging in het
+pipelineblok, een nieuwe foto F5, W51 vóór W50 en de beveiliging van `reset`. Het script controleert telkens het
+waarneembare resultaat en eindigt met "48 van 48 controles geslaagd". In deze map
 verandert niets. De unittests voor de controles draai je met `python -m unittest discover -s tests`. GitHub Actions
 draait beide bij elke push (workflow "Tests").
 
@@ -222,15 +246,19 @@ draait beide bij elke push (workflow "Tests").
   prompts en `kopij/`.
 - De algemene kennis over zonnestand (oosten: ochtendzon, westen: later op de dag, zuiden: rond het midden van de
   dag) staat in de claims als "algemene kennis", niet met een bron-ID. De redacteur controleert die formulering.
-- De controle op getallen kijkt alleen naar cijfers, niet naar uitgeschreven getallen zoals "vier". Die komen uit de
-  notities en staan als claim in de tabel.
+- De controle op getallen kijkt naar cijfers met hun buurwoord en naar uitgeschreven getallen met een eenheid ("zes
+  uur"). Losse telwoorden zoals "vier bezoekers" controleert ze niet; die staan als claim met bron in de tabel.
+- De controles zijn regels, geen begrip van de tekst. Een verzonnen bewering zonder getal ("allebei lichte kamers")
+  vangen ze niet; daarvoor is de claimtabel en de redacteur.
 - De stemcontrole kijkt alleen naar 'je' tegenover 'u'. Of de stem klopt, beoordeelt de redacteur.
 - De beeldkeuze is regelgebaseerd: gebied plus woorden uit het onderwerp. Bij een groter beeldregister is een
   handmatige keuze of een betere zoekfunctie nodig.
 - Besluiten worden met een tijdstempel vastgelegd. De verder gelijke runs zijn bit voor bit herhaalbaar, de
   tijdstempels niet.
-- `redactielog.csv` in de hoofdmap wordt bij elke run opnieuw geschreven uit de status van de werkmappen. Bewerk hem
-  niet met de hand: zet besluiten in het document of met `run.py besluit`.
+- `redactielog.csv` in de hoofdmap wordt bij elke run opnieuw geschreven uit de status van de werkmappen, dus ook je
+  eigen runs veranderen dat bestand. Bewerk hem niet met de hand: zet besluiten in het document of met `run.py besluit`.
+- Bij een andere bewerking dan in bijlage B gebruikt de pipeline het dichtstbijzijnde opgeslagen antwoord; zonder
+  modelkoppeling kan ze geen nieuwe tekst schrijven die de nieuwe feedback precies volgt.
 
 ## Mappen
 

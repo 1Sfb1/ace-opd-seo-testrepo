@@ -17,15 +17,13 @@ Je loopt de route met je fiets aan de hand. Bij de haakse bocht merk je dan of j
 
 ## Controle voor je volgende bezoek
 
-1. Meet thuis je fiets op de breedste plek en schrijf de maat op.
-2. Neem een meetlint mee.
-3. Begin bij de hoofdentree en tel de deuren tot de fietsenstalling. Kom je er meer tegen dan twee, schrijf dat dan op.
-4. Zet elke deur helemaal open en meet de opening op de smalste plek.
-5. Kijk of een deur vanzelf dichtvalt. Dan heb je een hand nodig om hem open te houden.
-6. Blijf staan bij de haakse bocht. Kijk of er genoeg ruimte is om je fiets de hoek om te krijgen. Twijfel je, meet dan de ruimte in de bocht.
-7. Leg alle maten naast de maat van je fiets.
+Neem een meetlint mee en loop de route twee keer. De eerste keer kijk je alleen. De tweede keer meet je.
 
-Past je fiets door beide deuren en om de bocht? Dan weet je dat deze route voor jou werkt.
+- Bij de eerste deur zet je de deur helemaal open en meet je de opening op de smalste plek. Valt hij vanzelf dicht, dan heb je straks een hand nodig om hem open te houden.
+- Bij de haakse bocht kijk je of er ruimte is om je fiets in één beweging de hoek om te krijgen. Twijfel je, meet dan de ruimte in de bocht.
+- Bij de tweede deur meet je opnieuw de opening.
+
+Leg die maten thuis naast de breedte van je fiets. Is de smalste deur breder dan je fiets en kom je om de bocht, dan werkt deze route voor jou.
 
 **Over de auteur.** Ivo begeleidt doorstromers in Lindehof.
 
@@ -36,11 +34,12 @@ Past je fiets door beide deuren en om de bocht? Dan weet je dat deze route voor 
 - Metatitel: Route naar de fietsenstalling testen: zo doe je dat
 - Metabeschrijving: Twee deuren en een haakse bocht: Ivo laat zien hoe je in Lindehof de route van de entree naar de fietsenstalling test, met of zonder fiets.
 - Tags: Lindehof, fietsenstalling, looproute
+- URL-pad: /gids/looproute-fietsenstalling
 
 ## Voor de reviewer
 
 - Aanleiding: zoekvraag Q4: "Hoe test ik de route van de entree naar een fietsenstalling?" (aanwijzing: Neem de lezer vanaf de entree mee langs deuren en de bocht.)
-- Paginakeuze: nieuwe pagina. Voorkeur Q2 is in 2026-12 al gebruikt door W50-M2-thema (status: afgewezen; ook een afgewezen concept houdt zijn plaats). Alternatief Q4 uit de onderwerpkalender gekozen. Geen bestaande pagina voor deze zoekvraag: nieuwe pagina.
+- Paginakeuze: nieuwe pagina. Voorkeur Q2 is in 2026-12 al bezet door W50-M2-thema (status: afgewezen; ook een afgewezen concept houdt zijn plaats). Alternatief Q4 uit de onderwerpkalender gekozen. Geen bestaande pagina voor deze zoekvraag: nieuwe pagina.
 - Waarom nu: Drie van de vijf bezoekers vroegen deze week naar de route naar de fietsenstalling (N4). Q4 is het alternatief uit de kalender, omdat Q2 in december al gebruikt is.
 
 ### Claims en bronnen
@@ -59,21 +58,21 @@ Past je fiets door beide deuren en om de bocht? Dan weet je dat deze route voor 
 
 ### Verwerkte feedback
 
-- FB-W50-M2-thema: Sectie 'Controle voor je volgende bezoek': zeven stappen die de lezer bij het volgende bezoek zelf uitvoert, langs de twee deuren en de haakse bocht (B4).
+- FB-W50-M2-thema: Sectie 'Controle voor je volgende bezoek': de lezer loopt de route twee keer en meet bij beide deuren en de haakse bocht (B4); thuis vergelijkt de lezer de maten met de fiets.
 
 <!-- pipeline:start -->
 ## Pad, beeld en controle
 
-_Dit blok schrijft de pipeline bij elke run opnieuw. Bewerk de rest van het document; dit blok niet._
+_Dit blok schrijft de pipeline bij elke run opnieuw. Wijzig het URL-pad onder 'Voor de website'; wijzigingen in dit blok worden niet overgenomen._
 
 - Sleutel: W51-M2-thema · editie W51 (aanleveren 2026-12-14T09:00:00+01:00, plaatsing 2026-12-16) · Ivo (M2) · thema
-- Voorgesteld URL-pad: /gids/looproute-fietsenstalling
+- URL-pad: /gids/looproute-fietsenstalling
 - Beeld: geen bruikbaar beeld · beeldtaak: F4 (hof8-fietsroute.jpg) past inhoudelijk, maar de rechten zijn verlopen. Zoek of laat een vrijgegeven beeld maken over: route naar fietsenstalling (Lindehof).
 - Kopij: opgeslagen modeluitvoer kopij/W51-M2-thema-04a342020d.json
 
 ### Controle
 
-- OK: Lopende tekst: 298 woorden (max 600).
+- OK: Lopende tekst: 290 woorden (max 600).
 - OK: URL-pad /gids/looproute-fietsenstalling is nieuw en uniek.
 - OK: Geen onbevestigde uitspraak in de lezerskopij.
 - AANDACHT: Beeldtaak: F4 (hof8-fietsroute.jpg) past inhoudelijk, maar de rechten zijn verlopen. Zoek of laat een vrijgegeven beeld maken over: route naar fietsenstalling (Lindehof).
@@ -81,5 +80,5 @@ _Dit blok schrijft de pipeline bij elke run opnieuw. Bewerk de rest van het docu
 ### Besluit
 
 - Status: concept
-- Beslissen: `python run.py besluit W51-M2-thema goedgekeurd` of `python run.py besluit W51-M2-thema afgewezen --reden "..."` (werkmap: `--werkmap voorbeelden`)
+- Beslissen: `python run.py besluit W51-M2-thema goedgekeurd --werkmap voorbeelden` of `python run.py besluit W51-M2-thema afgewezen --reden "..." --werkmap voorbeelden`
 <!-- pipeline:end -->

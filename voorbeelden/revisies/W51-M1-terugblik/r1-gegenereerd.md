@@ -3,7 +3,7 @@
 
 _Noor over haar week aan de Koperkade_
 
-Ga op het terras staan en kijk om je heen. Waar valt de zon, en waar ligt de schaduw? Dat wilden twee bezoekers deze week zelf zien.
+Zet een stoel op het terras en ga even zitten. Zit je in de zon of in de schaduw? Dat wilden twee bezoekers deze week zelf weten.
 
 Ik had drie bezichtigingen aan de Koperkade. Twee bezoekers wilden het terras op verschillende tijdstippen bekijken. Een goed plan, want gemeten zonuren hebben we niet. Wat je zelf ziet, is dan je beste informatie.
 
@@ -26,6 +26,7 @@ In de nieuwe gids over terrassen op het zuiden en het oosten lees je waar je ver
 - Metatitel: Weekbericht Koperkade: wanneer komt de zon op het terras?
 - Metabeschrijving: Noor over haar week aan de Koperkade: bezoekers wilden het terras op verschillende tijdstippen zien. Zo vergelijk je zon en schaduw zelf.
 - Tags: Koperkade, terras, bezichtiging
+- URL-pad: /weekbericht/2026-w51-koperkade
 
 ## Voor de reviewer
 

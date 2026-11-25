@@ -26,6 +26,7 @@ In de bijgewerkte gids over de fietsberging lees je stap voor stap hoe je de hel
 - Metatitel: Weekbericht Koperkade: past je bakfiets in de berging?
 - Metabeschrijving: Noor over haar week aan de Koperkade: vier bezoekers vroegen of hun bakfiets door de bergingsdeur past. Zo meet je dat zelf.
 - Tags: Koperkade, bakfiets, bezichtiging
+- URL-pad: /weekbericht/2026-w50-koperkade
 
 ## Voor de reviewer
 

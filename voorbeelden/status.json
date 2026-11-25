@@ -6,25 +6,27 @@
       "aanleiding_id": "Q1",
       "vraagreden": "Voorkeur Q1 uit de onderwerpkalender; nog vrij in 2026-12.",
       "botsing": false,
+      "meldingen": [],
       "status": "goedgekeurd",
       "revisies": [
         {
           "nr": 1,
           "soort": "gegenereerd",
-          "hash": "57a973b39bd1",
+          "hash": "943dbaeeab7a",
           "pad": "voorbeelden/revisies/W50-M1-thema/r1-gegenereerd.md",
-          "tijd": "2026-11-25T20:50:54+01:00"
+          "tijd": "2026-11-25T21:13:47+01:00"
         },
         {
           "nr": 2,
           "soort": "handmatig",
-          "hash": "7a5dd84a9e2a",
+          "hash": "962c0e2e568d",
           "pad": "voorbeelden/revisies/W50-M1-thema/r2-handmatig.md",
-          "tijd": "2026-11-25T20:50:54+01:00"
+          "tijd": "2026-11-25T21:13:47+01:00"
         }
       ],
       "handmatig": false,
-      "gen_hash": "57a973b39bd1",
+      "gen_hash": "943dbaeeab7a",
+      "url_bron": "pipeline",
       "week": "W50",
       "makelaar": "M1",
       "keuze": "update",
@@ -36,20 +38,22 @@
       "taak": null,
       "documentpad": "voorbeelden/W50/W50-M1-thema.md",
       "kopij": {
-        "bron": "opgeslagen",
+        "bron": "exact",
         "bestand": "kopij/W50-M1-thema-ea6a0e9d24.json",
         "fingerprint": "ea6a0e9d24"
       },
+      "na_besluit": false,
       "aandacht": [],
       "bron_ids": [
         "Q1",
         "B1",
         "P1"
       ],
+      "blok_hash": "66a1eec4a470",
       "besluit": {
         "besluit": "goedgekeurd",
         "reden": "",
-        "tijd": "2026-11-25T20:50:54+01:00",
+        "tijd": "2026-11-25T21:13:47+01:00",
         "revisie": 2,
         "toegevoegd": [
           "Meet thuis ook hoe breed je stuur is."
@@ -64,18 +68,20 @@
       "aanleiding_id": "Q2",
       "vraagreden": "Voorkeur Q2 uit de onderwerpkalender; nog vrij in 2026-12.",
       "botsing": false,
+      "meldingen": [],
       "status": "afgewezen",
       "revisies": [
         {
           "nr": 1,
           "soort": "gegenereerd",
-          "hash": "a645ad5ad5d7",
+          "hash": "38432f003ce6",
           "pad": "voorbeelden/revisies/W50-M2-thema/r1-gegenereerd.md",
-          "tijd": "2026-11-25T20:50:54+01:00"
+          "tijd": "2026-11-25T21:13:47+01:00"
         }
       ],
       "handmatig": false,
-      "gen_hash": "a645ad5ad5d7",
+      "gen_hash": "38432f003ce6",
+      "url_bron": "pipeline",
       "week": "W50",
       "makelaar": "M2",
       "keuze": "nieuw",
@@ -87,20 +93,22 @@
       "taak": null,
       "documentpad": "voorbeelden/W50/W50-M2-thema.md",
       "kopij": {
-        "bron": "opgeslagen",
+        "bron": "exact",
         "bestand": "kopij/W50-M2-thema-3e6d485c2f.json",
         "fingerprint": "3e6d485c2f"
       },
+      "na_besluit": false,
       "aandacht": [],
       "bron_ids": [
         "N2",
         "Q2",
         "B2"
       ],
+      "blok_hash": "5c147b040f09",
       "besluit": {
         "besluit": "afgewezen",
         "reden": "Geef de lezer een concrete controle voor het volgende bezoek.",
-        "tijd": "2026-11-25T20:50:54+01:00",
+        "tijd": "2026-11-25T21:13:47+01:00",
         "revisie": 1,
         "toegevoegd": [],
         "verwijderd": [],
@@ -108,18 +116,20 @@
       }
     },
     "W50-M1-terugblik": {
+      "meldingen": [],
       "status": "concept",
       "revisies": [
         {
           "nr": 1,
           "soort": "gegenereerd",
-          "hash": "54b9e1756acc",
+          "hash": "fbcd4422b03d",
           "pad": "voorbeelden/revisies/W50-M1-terugblik/r1-gegenereerd.md",
-          "tijd": "2026-11-25T20:50:54+01:00"
+          "tijd": "2026-11-25T21:13:47+01:00"
         }
       ],
       "handmatig": false,
-      "gen_hash": "54b9e1756acc",
+      "gen_hash": "fbcd4422b03d",
+      "url_bron": "pipeline",
       "week": "W50",
       "maand": "2026-12",
       "makelaar": "M1",
@@ -135,29 +145,33 @@
       "taak": null,
       "documentpad": "voorbeelden/W50/W50-M1-terugblik.md",
       "kopij": {
-        "bron": "opgeslagen",
+        "bron": "exact",
         "bestand": "kopij/W50-M1-terugblik-038ed0a6aa.json",
         "fingerprint": "038ed0a6aa"
       },
+      "na_besluit": false,
       "aandacht": [],
       "bron_ids": [
         "N1",
         "B1"
-      ]
+      ],
+      "blok_hash": "018cf0b76de8"
     },
     "W50-M2-terugblik": {
+      "meldingen": [],
       "status": "concept",
       "revisies": [
         {
           "nr": 1,
           "soort": "gegenereerd",
-          "hash": "1f1cfeb7e33e",
+          "hash": "64555d73296a",
           "pad": "voorbeelden/revisies/W50-M2-terugblik/r1-gegenereerd.md",
-          "tijd": "2026-11-25T20:50:54+01:00"
+          "tijd": "2026-11-25T21:13:47+01:00"
         }
       ],
       "handmatig": false,
-      "gen_hash": "1f1cfeb7e33e",
+      "gen_hash": "64555d73296a",
+      "url_bron": "pipeline",
       "week": "W50",
       "maand": "2026-12",
       "makelaar": "M2",
@@ -173,15 +187,17 @@
       "taak": null,
       "documentpad": "voorbeelden/W50/W50-M2-terugblik.md",
       "kopij": {
-        "bron": "opgeslagen",
+        "bron": "exact",
         "bestand": "kopij/W50-M2-terugblik-45ef717406.json",
         "fingerprint": "45ef717406"
       },
+      "na_besluit": false,
       "aandacht": [],
       "bron_ids": [
         "N2",
         "B2"
-      ]
+      ],
+      "blok_hash": "fcc9990cf8f2"
     },
     "W51-M1-thema": {
       "soort": "thema",
@@ -189,18 +205,20 @@
       "aanleiding_id": "Q3",
       "vraagreden": "Voorkeur Q3 uit de onderwerpkalender; nog vrij in 2026-12.",
       "botsing": false,
+      "meldingen": [],
       "status": "concept",
       "revisies": [
         {
           "nr": 1,
           "soort": "gegenereerd",
-          "hash": "077972001817",
+          "hash": "c837c51c0a09",
           "pad": "voorbeelden/revisies/W51-M1-thema/r1-gegenereerd.md",
-          "tijd": "2026-11-25T20:50:54+01:00"
+          "tijd": "2026-11-25T21:13:47+01:00"
         }
       ],
       "handmatig": false,
-      "gen_hash": "077972001817",
+      "gen_hash": "c837c51c0a09",
+      "url_bron": "pipeline",
       "week": "W51",
       "makelaar": "M1",
       "keuze": "nieuw",
@@ -212,50 +230,55 @@
       "taak": null,
       "documentpad": "voorbeelden/W51/W51-M1-thema.md",
       "kopij": {
-        "bron": "opgeslagen",
+        "bron": "exact",
         "bestand": "kopij/W51-M1-thema-1927b26971.json",
         "fingerprint": "1927b26971"
       },
+      "na_besluit": false,
       "aandacht": [],
       "bron_ids": [
         "N3",
         "Q3",
         "B3"
-      ]
+      ],
+      "blok_hash": "edf28dd65097"
     },
     "W51-M2-thema": {
       "soort": "thema",
       "maand": "2026-12",
       "aanleiding_id": "Q4",
-      "vraagreden": "Voorkeur Q2 is in 2026-12 al gebruikt door W50-M2-thema (status: afgewezen; ook een afgewezen concept houdt zijn plaats). Alternatief Q4 uit de onderwerpkalender gekozen.",
+      "vraagreden": "Voorkeur Q2 is in 2026-12 al bezet door W50-M2-thema (status: afgewezen; ook een afgewezen concept houdt zijn plaats). Alternatief Q4 uit de onderwerpkalender gekozen.",
       "botsing": false,
+      "meldingen": [],
       "status": "concept",
       "revisies": [
         {
           "nr": 1,
           "soort": "gegenereerd",
-          "hash": "35515e03ab2d",
+          "hash": "cd227055dcdc",
           "pad": "voorbeelden/revisies/W51-M2-thema/r1-gegenereerd.md",
-          "tijd": "2026-11-25T20:50:54+01:00"
+          "tijd": "2026-11-25T21:13:47+01:00"
         }
       ],
       "handmatig": false,
-      "gen_hash": "35515e03ab2d",
+      "gen_hash": "cd227055dcdc",
+      "url_bron": "pipeline",
       "week": "W51",
       "makelaar": "M2",
       "keuze": "nieuw",
       "pagina_id": null,
-      "keuzereden": "Voorkeur Q2 is in 2026-12 al gebruikt door W50-M2-thema (status: afgewezen; ook een afgewezen concept houdt zijn plaats). Alternatief Q4 uit de onderwerpkalender gekozen. Geen bestaande pagina voor deze zoekvraag: nieuwe pagina.",
+      "keuzereden": "Voorkeur Q2 is in 2026-12 al bezet door W50-M2-thema (status: afgewezen; ook een afgewezen concept houdt zijn plaats). Alternatief Q4 uit de onderwerpkalender gekozen. Geen bestaande pagina voor deze zoekvraag: nieuwe pagina.",
       "url_pad": "/gids/looproute-fietsenstalling",
       "beeld": null,
       "beeldstatus": "beeldtaak",
       "taak": "F4 (hof8-fietsroute.jpg) past inhoudelijk, maar de rechten zijn verlopen. Zoek of laat een vrijgegeven beeld maken over: route naar fietsenstalling (Lindehof).",
       "documentpad": "voorbeelden/W51/W51-M2-thema.md",
       "kopij": {
-        "bron": "opgeslagen",
+        "bron": "exact",
         "bestand": "kopij/W51-M2-thema-04a342020d.json",
         "fingerprint": "04a342020d"
       },
+      "na_besluit": false,
       "aandacht": [
         "AANDACHT: Beeldtaak: F4 (hof8-fietsroute.jpg) past inhoudelijk, maar de rechten zijn verlopen. Zoek of laat een vrijgegeven beeld maken over: route naar fietsenstalling (Lindehof)."
       ],
@@ -263,21 +286,24 @@
         "N4",
         "Q4",
         "B4"
-      ]
+      ],
+      "blok_hash": "5b489ba43c65"
     },
     "W51-M1-terugblik": {
+      "meldingen": [],
       "status": "concept",
       "revisies": [
         {
           "nr": 1,
           "soort": "gegenereerd",
-          "hash": "d984285bf639",
+          "hash": "94ef8942a3f1",
           "pad": "voorbeelden/revisies/W51-M1-terugblik/r1-gegenereerd.md",
-          "tijd": "2026-11-25T20:50:54+01:00"
+          "tijd": "2026-11-25T21:13:47+01:00"
         }
       ],
       "handmatig": false,
-      "gen_hash": "d984285bf639",
+      "gen_hash": "94ef8942a3f1",
+      "url_bron": "pipeline",
       "week": "W51",
       "maand": "2026-12",
       "makelaar": "M1",
@@ -293,29 +319,33 @@
       "taak": null,
       "documentpad": "voorbeelden/W51/W51-M1-terugblik.md",
       "kopij": {
-        "bron": "opgeslagen",
+        "bron": "exact",
         "bestand": "kopij/W51-M1-terugblik-42f81704e6.json",
         "fingerprint": "42f81704e6"
       },
+      "na_besluit": false,
       "aandacht": [],
       "bron_ids": [
         "N3",
         "B3"
-      ]
+      ],
+      "blok_hash": "55c1e984128e"
     },
     "W51-M2-terugblik": {
+      "meldingen": [],
       "status": "concept",
       "revisies": [
         {
           "nr": 1,
           "soort": "gegenereerd",
-          "hash": "9ca796263f54",
+          "hash": "97948eb81750",
           "pad": "voorbeelden/revisies/W51-M2-terugblik/r1-gegenereerd.md",
-          "tijd": "2026-11-25T20:50:54+01:00"
+          "tijd": "2026-11-25T21:13:47+01:00"
         }
       ],
       "handmatig": false,
-      "gen_hash": "9ca796263f54",
+      "gen_hash": "97948eb81750",
+      "url_bron": "pipeline",
       "week": "W51",
       "maand": "2026-12",
       "makelaar": "M2",
@@ -331,17 +361,19 @@
       "taak": "F4 (hof8-fietsroute.jpg) past inhoudelijk, maar de rechten zijn verlopen. Zoek of laat een vrijgegeven beeld maken over: route naar fietsenstalling (Lindehof).",
       "documentpad": "voorbeelden/W51/W51-M2-terugblik.md",
       "kopij": {
-        "bron": "opgeslagen",
+        "bron": "exact",
         "bestand": "kopij/W51-M2-terugblik-378f001a54.json",
         "fingerprint": "378f001a54"
       },
+      "na_besluit": false,
       "aandacht": [
         "AANDACHT: Beeldtaak: F4 (hof8-fietsroute.jpg) past inhoudelijk, maar de rechten zijn verlopen. Zoek of laat een vrijgegeven beeld maken over: route naar fietsenstalling (Lindehof)."
       ],
       "bron_ids": [
         "N4",
         "B4"
-      ]
+      ],
+      "blok_hash": "15f465c3d7d0"
     }
   },
   "feedback": {
@@ -361,22 +393,22 @@
       "soort": "afgewezen",
       "tekst": "Geef de lezer een concrete controle voor het volgende bezoek.",
       "toegepast_in": "W51-M2-thema",
-      "waar": "Sectie 'Controle voor je volgende bezoek': zeven stappen die de lezer bij het volgende bezoek zelf uitvoert, langs de twee deuren en de haakse bocht (B4)."
+      "waar": "Sectie 'Controle voor je volgende bezoek': de lezer loopt de route twee keer en meet bij beide deuren en de haakse bocht (B4); thuis vergelijkt de lezer de maten met de fiets."
     }
   },
   "runs": [
     {
-      "tijd": "2026-11-25T20:50:54+01:00",
+      "tijd": "2026-11-25T21:13:47+01:00",
       "week": "W50",
       "modus": "opgeslagen"
     },
     {
-      "tijd": "2026-11-25T20:50:54+01:00",
+      "tijd": "2026-11-25T21:13:47+01:00",
       "week": "W50",
       "modus": "opgeslagen"
     },
     {
-      "tijd": "2026-11-25T20:50:54+01:00",
+      "tijd": "2026-11-25T21:13:47+01:00",
       "week": "W51",
       "modus": "opgeslagen"
     }

@@ -5,7 +5,7 @@ _Twee woonkamers in Hof 8, twee momenten van de dag_
 
 Het verschil zit in het moment waarop de zon binnenkomt. Een woonkamer op het oosten krijgt de zon in de ochtend. Een woonkamer op het westen krijgt hem later op de dag.
 
-In Lindehof zie je dat bij de twee voorbeeldwoningen van Hof 8. De ene woonkamer ligt op het oosten, de andere op het westen. Allebei lichte kamers, maar niet op hetzelfde moment.
+In Lindehof zie je dat bij de twee voorbeeldwoningen van Hof 8. De ene woonkamer ligt op het oosten, de andere op het westen. Ze krijgen het licht dus op een ander moment van de dag.
 
 ## De woonkamer op het oosten
 
@@ -28,6 +28,7 @@ Dat hangt af van je dag. Bedenk wanneer je het meest in de woonkamer zit, en kij
 - Metatitel: Woonkamer op het oosten of westen: wat is het verschil?
 - Metabeschrijving: Een woonkamer op het oosten heeft ochtendlicht, een woonkamer op het westen licht later op de dag. Ivo legt het verschil uit met Hof 8 in Lindehof.
 - Tags: Lindehof, lichtinval, woonkamer
+- URL-pad: /gids/lichtinval-woonkamer
 
 ## Voor de reviewer
 

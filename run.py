@@ -27,6 +27,7 @@ def main(argv=None) -> int:
     p = sub.add_parser("status", help="toon de concepten en hun status")
     ws(p)
     p = sub.add_parser("reset", help="maak de werkmap leeg (alleen voor een schone proef)")
+    p.add_argument("--ja", action="store_true", help="nodig om de meegeleverde voorbeelden te wissen")
     ws(p)
     a = ap.parse_args(argv)
     try:
@@ -39,7 +40,7 @@ def main(argv=None) -> int:
         elif a.cmd == "status":
             out = [redactie.status(a.werkmap)]
         else:
-            out = [redactie.reset(a.werkmap)]
+            out = [redactie.reset(a.werkmap, a.ja)]
     except redactie.PipelineError as e:
         print(f"Fout: {e}", file=sys.stderr)
         return 2

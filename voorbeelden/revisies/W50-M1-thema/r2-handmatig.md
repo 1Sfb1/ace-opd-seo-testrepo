@@ -1,5 +1,5 @@
 <!-- sleutel: W50-M1-thema -->
-# Past je bakfiets in de berging van Meander?
+# Past je fiets of bakfiets in de berging van Meander?
 
 _Meet niet alleen de buitenste deur, maar de hele route tot in je berging_
 
@@ -32,9 +32,10 @@ Neem je meetlint mee naar de bezichtiging. Dan lopen we de route samen.
 
 ## Voor de website
 
-- Metatitel: Past je bakfiets in de berging van Meander? Zo meet je het
+- Metatitel: Past je fiets of bakfiets in de berging van Meander?
 - Metabeschrijving: De buitenste bergingsdeur van Meander heeft 1,10 m vrije doorgang; de binnenste deur is niet ingemeten. Zo controleer je de hele route.
 - Tags: Koperkade, fietsberging, bakfiets
+- URL-pad: /gids/fietsberging
 
 ## Voor de reviewer
 
@@ -65,6 +66,6 @@ Neem je meetlint mee naar de bezichtiging. Dan lopen we de route samen.
 | vervangen | Is je fiets smaller dan 1,10 m, dan past hij door de deur en kun je hem in je berging zetten. | Te stellig: de binnenste deur is niet ingemeten (B1). Nu: 'dan komt hij door die eerste deur', gevolgd door de controle van de hele route. |
 | vervangen | Twijfel je? Neem dan een meetlint mee naar de bezichtiging. | Het meetlint staat nu in stap 2. 'Twijfel je?' wordt een uitnodiging om de route samen te lopen. |
 | toegevoegd | Eerste alinea en het stappenplan 'Zo controleer je de hele route' | Beantwoordt zoekvraag Q1 en de aanwijzing: een controle voor de volledige route. |
-| vervangen | Titel 'Past je fiets in de berging van Meander?' | Wordt 'Past je bakfiets ...', zoals de zoekvraag. |
+| vervangen | Titel 'Past je fiets in de berging van Meander?' | Wordt 'Past je fiets of bakfiets ...': de pagina blijft over alle fietsen gaan en sluit aan op zoekvraag Q1. |
 | vervangen | Metatitel, metabeschrijving en tags | Bakfiets en de hele route erin. Tag Koperkade blijft; 'berging' en 'fiets' worden 'fietsberging' en 'bakfiets'. |
 | behouden | Beeld F1 (meander-berging.jpg) | Past nog en is vrijgegeven. |

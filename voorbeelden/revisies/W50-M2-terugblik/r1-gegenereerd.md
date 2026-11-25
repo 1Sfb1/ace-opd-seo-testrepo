@@ -22,6 +22,7 @@ Wil je de lichtinval echt vergelijken? Plan je tweede bezoek dan op een ander de
 - Metatitel: Weekbericht Lindehof: dezelfde woonkamer op een ander uur
 - Metabeschrijving: Ivo over zijn week in Lindehof: bezoekers vergeleken de lichtinval in de woonkamer. Waarom een tweede bezoek op een ander tijdstip helpt.
 - Tags: Lindehof, lichtinval, bezichtiging
+- URL-pad: /weekbericht/2026-w50-lindehof
 
 ## Voor de reviewer
 

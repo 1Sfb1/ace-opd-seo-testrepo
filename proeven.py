@@ -58,20 +58,115 @@ def log_rows(repo):
 
 def main():
     tmp = Path(tempfile.mkdtemp(prefix="maandagredactie-"))
-    repo = tmp / "repo"
-    repo.mkdir()
-    for name in KEEP:
-        src = HERE / name
-        (shutil.copytree if src.is_dir() else shutil.copy2)(src, repo / name)
-    (repo / "uitvoer").mkdir()
-    print(f"Schone kopie in {repo}")
+    print(f"Schone kopieën in {tmp}")
     try:
-        trials(repo)
+        trials(fresh(tmp, "repo"))
+        edge_cases(lambda name: fresh(tmp, name))
     finally:
         shutil.rmtree(tmp, ignore_errors=True)
     failed = [r for r in results if not r[1]]
     print(f"\n{len(results) - len(failed)} van {len(results)} controles geslaagd.")
     return 1 if failed else 0
+
+
+def fresh(tmp, name):
+    repo = tmp / name
+    repo.mkdir()
+    for item in KEEP:
+        src = HERE / item
+        (shutil.copytree if src.is_dir() else shutil.copy2)(src, repo / item)
+    (repo / "uitvoer").mkdir()
+    return repo
+
+
+def fails(repo, *args):
+    p = subprocess.run([sys.executable, "run.py", *args], cwd=repo, capture_output=True, text=True, encoding="utf-8")
+    return p.returncode == 2, p.stderr
+
+
+def edit(path, old, new):
+    text = path.read_text(encoding="utf-8")
+    assert old in text, (path.name, old)
+    path.write_text(text.replace(old, new, 1), encoding="utf-8")
+
+
+def edge_cases(new_repo):
+    """Proef 7: what an editor might do outside the scenario of the assignment."""
+    print("\nProef 7. Randgevallen buiten het scenario")
+    noor_sentence = "1. Meet thuis je bakfiets op de breedste plek en schrijf die maat op."
+
+    # a different edit than appendix B: the stored W51 copy is still used, flagged for a check
+    repo = new_repo("afwijkend")
+    run(repo, "editie", "--week", "W50")
+    p = repo / "uitvoer/W50/W50-M1-thema.md"
+    edit(p, noor_sentence, noor_sentence + " Meet thuis ook hoe breed je stuur is.")
+    edit(p, "Dan lopen we de route samen.", "Dan lopen we samen de route.")
+    run(repo, "besluit", "W50-M1-thema", "goedgekeurd")
+    run(repo, "besluit", "W50-M2-thema", "afgewezen", "--reden", "Geef de lezer een concrete controle voor het volgende bezoek.")
+    run(repo, "editie", "--week", "W51")
+    doc = (repo / "uitvoer/W51/W51-M1-thema.md").read_text(encoding="utf-8")
+    ok("andere bewerking: W51 gebruikt nog de opgeslagen kopij, geen sjabloon",
+       "## Bereid je thuis voor" in reader(repo / "uitvoer/W51/W51-M1-thema.md") and "Kopij uit het sjabloon" not in doc)
+    ok("andere bewerking: de redacteur krijgt een controlevraag over de feedback", "geschreven bij andere feedback" in doc)
+    ok("Ivo's afwijking is gelijk aan bijlage B: feedback geldt als verwerkt",
+       "FB-W50-M2-thema" in log_rows(repo)["W51-M2-thema"]["feedback_verwerkt"])
+
+    # false OK's from the blind review
+    p = repo / "uitvoer/W50/W50-M2-terugblik.md"
+    edit(p, "Deze week liet ik vier keer", "Reken op 10 cm speling. De prijzen zijn met twaalf procent gestegen. "
+                                         "De kamer krijgt 8 uur zon. Deze week liet ik vier keer")
+    run(repo, "editie", "--week", "W50")
+    doc = p.read_text(encoding="utf-8")
+    ok("'twaalf procent gestegen' is een FOUT", "FOUT: De lezerskopij noemt een percentage en prijsontwikkeling" in doc)
+    ok("'10 cm' en '8 uur' vragen aandacht", "10 cm" in doc.split("### Controle")[1] and "8 uur" in doc.split("### Controle")[1])
+
+    # editing after approval is visible
+    p = repo / "uitvoer/W50/W50-M1-thema.md"
+    edit(p, "Neem je meetlint mee naar de bezichtiging.", "Neem je meetlint en je fiets mee naar de bezichtiging.")
+    run(repo, "editie", "--week", "W50")
+    ok("bewerking na goedkeuren wordt gemeld", "De tekst is na het besluit bewerkt" in p.read_text(encoding="utf-8")
+       and "na besluit bewerkt" in log_rows(repo)["W50-M1-thema"]["status"])
+
+    # a deleted approved draft comes back from its last revision, with its decision
+    p.unlink()
+    out = run(repo, "editie", "--week", "W50")
+    text = p.read_text(encoding="utf-8")
+    ok("verwijderd goedgekeurd concept wordt hersteld uit de revisie", "hersteld uit revisie" in out
+       and "Meet thuis ook hoe breed je stuur is." in reader(p) and "Status: goedgekeurd" in text)
+
+    # the editor chooses another URL path; an edit in the pipeline block is kept aside, not lost silently
+    p = repo / "uitvoer/W51/W51-M2-thema.md"
+    edit(p, "- URL-pad: /gids/looproute-fietsenstalling", "- URL-pad: /gids/route-fietsenstalling-lindehof")
+    edit(p, "- Status: concept", "- Status: goedgekeurd door mij")
+    run(repo, "editie", "--week", "W51")
+    run(repo, "editie", "--week", "W51")
+    doc = p.read_text(encoding="utf-8")
+    ok("URL-pad van de redacteur blijft staan", log_rows(repo)["W51-M2-thema"]["url_pad"] == "/gids/route-fietsenstalling-lindehof"
+       and "door de redacteur gekozen" in doc)
+    ok("wijziging in het pipelineblok wordt bewaard en gemeld", "niet overgenomen" in doc
+       and any((repo / "uitvoer/revisies/W51-M2-thema").glob("pipelineblok-bewerkt-*.md")))
+
+    # a new cleared photo closes the image task
+    bron = json.loads((repo / "invoer/redactiebron.json").read_text(encoding="utf-8"))
+    bron["beeldregister"].append({"id": "F5", "bestand": "hof8-fietsroute-2027.jpg", "gebied": "Lindehof",
+                                  "onderwerp": "route naar fietsenstalling", "recht": "vrijgegeven"})
+    (repo / "invoer/redactiebron.json").write_text(json.dumps(bron, ensure_ascii=False, indent=2), encoding="utf-8")
+    run(repo, "editie", "--week", "W51")
+    ok("nieuwe foto F5 sluit de beeldtaak", log_rows(repo)["W51-M2-thema"]["beeld"] == "F5"
+       and log_rows(repo)["W51-M2-terugblik"]["beeld"] == "F5")
+
+    # running W51 before W50 keeps the calendar order
+    repo = new_repo("volgorde")
+    out = run(repo, "editie", "--week", "W51")
+    ok("W51 eerst: waarschuwing dat W50 nog niet gedraaid is", "W50 is in werkmap uitvoer nog niet gedraaid" in out)
+    run(repo, "editie", "--week", "W50")
+    rows = log_rows(repo)
+    ok("W51 eerst: Ivo krijgt Q4, W50 houdt Q2, geen FOUT", rows["W51-M2-thema"]["aanleiding"] == "Q4"
+       and rows["W50-M2-thema"]["aanleiding"] == "Q2" and "FOUT" not in rows["W50-M2-thema"]["aandacht"])
+
+    # guards
+    ok("reset van de voorbeelden vraagt om --ja", fails(repo, "reset", "--werkmap", "voorbeelden")[0])
+    ok("invoer is geen werkmap", fails(repo, "editie", "--week", "W50", "--werkmap", "invoer")[0])
 
 
 def trials(repo):

@@ -22,6 +22,7 @@ Wil je de lichtinval echt vergelijken? Plan je tweede bezoek dan op een ander de
 - Metatitel: Weekbericht Lindehof: dezelfde woonkamer op een ander uur
 - Metabeschrijving: Ivo over zijn week in Lindehof: bezoekers vergeleken de lichtinval in de woonkamer. Waarom een tweede bezoek op een ander tijdstip helpt.
 - Tags: Lindehof, lichtinval, bezichtiging
+- URL-pad: /weekbericht/2026-w50-lindehof
 
 ## Voor de reviewer
 
@@ -45,10 +46,10 @@ Wil je de lichtinval echt vergelijken? Plan je tweede bezoek dan op een ander de
 <!-- pipeline:start -->
 ## Pad, beeld en controle
 
-_Dit blok schrijft de pipeline bij elke run opnieuw. Bewerk de rest van het document; dit blok niet._
+_Dit blok schrijft de pipeline bij elke run opnieuw. Wijzig het URL-pad onder 'Voor de website'; wijzigingen in dit blok worden niet overgenomen._
 
 - Sleutel: W50-M2-terugblik · editie W50 (aanleveren 2026-12-07T09:00:00+01:00, plaatsing 2026-12-09) · Ivo (M2) · terugblik
-- Voorgesteld URL-pad: /weekbericht/2026-w50-lindehof
+- URL-pad: /weekbericht/2026-w50-lindehof
 - Beeld: F2 hof8-woonkamer.jpg · rechten: vrijgegeven
 - Kopij: opgeslagen modeluitvoer kopij/W50-M2-terugblik-45ef717406.json
 
@@ -57,11 +58,11 @@ _Dit blok schrijft de pipeline bij elke run opnieuw. Bewerk de rest van het docu
 - OK: Lopende tekst: 144 woorden (max 600).
 - OK: URL-pad /weekbericht/2026-w50-lindehof is nieuw en uniek.
 - OK: Geen onbevestigde uitspraak in de lezerskopij.
-- OK: Elk getal staat in een geciteerde bron (8).
+- OK: Elk getal staat zo in een geciteerde bron.
 - OK: Beeld F2 (hof8-woonkamer.jpg) is vrijgegeven.
 
 ### Besluit
 
 - Status: concept
-- Beslissen: `python run.py besluit W50-M2-terugblik goedgekeurd` of `python run.py besluit W50-M2-terugblik afgewezen --reden "..."` (werkmap: `--werkmap voorbeelden`)
+- Beslissen: `python run.py besluit W50-M2-terugblik goedgekeurd --werkmap voorbeelden` of `python run.py besluit W50-M2-terugblik afgewezen --reden "..." --werkmap voorbeelden`
 <!-- pipeline:end -->

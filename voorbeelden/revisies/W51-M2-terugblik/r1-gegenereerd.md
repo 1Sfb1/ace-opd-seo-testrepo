@@ -20,6 +20,7 @@ Hoe breed de deuren zijn, is niet vastgelegd. Loop de route dus zelf, het liefst
 - Metatitel: Weekbericht Lindehof: van de voordeur naar je fiets
 - Metabeschrijving: Ivo over zijn week in Lindehof: drie bezoekers vroegen naar de route naar de fietsenstalling. Twee manieren om die route te bekijken.
 - Tags: Lindehof, fietsenstalling, bezichtiging
+- URL-pad: /weekbericht/2026-w51-lindehof
 
 ## Voor de reviewer
 
