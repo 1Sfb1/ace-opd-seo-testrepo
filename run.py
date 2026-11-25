@@ -21,6 +21,7 @@ def main(argv=None) -> int:
     p.add_argument("sleutel", help="bijvoorbeeld W50-M2-thema")
     p.add_argument("besluit", choices=["goedgekeurd", "afgewezen"])
     p.add_argument("--reden", help="verplicht bij afwijzen")
+    p.add_argument("--ondanks-fout", action="store_true", help="keur goed terwijl de controle nog een FOUT meldt")
     ws(p)
     p = sub.add_parser("bijlage-b", help="voer de twee redactiebesluiten uit bijlage B in (bewerking + afwijzing)")
     ws(p)
@@ -34,7 +35,7 @@ def main(argv=None) -> int:
         if a.cmd == "editie":
             out = redactie.run_edition(a.week.upper(), a.werkmap, a.modus)
         elif a.cmd == "besluit":
-            out = [redactie.decide(a.sleutel, a.besluit, a.reden, a.werkmap)]
+            out = [redactie.decide(a.sleutel, a.besluit, a.reden, a.werkmap, a.ondanks_fout)]
         elif a.cmd == "bijlage-b":
             out = redactie.apply_appendix_b(a.werkmap)
         elif a.cmd == "status":

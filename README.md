@@ -69,22 +69,26 @@ De controles melden met `OK`, `AANDACHT` of `FOUT`:
 - ontbrekende kop, onderkop, metatitel, metabeschrijving, URL-pad, bio, of geen drie tags;
 - te lange metatitel (meer dan 60 tekens) of metabeschrijving (meer dan 160 tekens), en meer dan 600 woorden;
 - een URL-pad dat al bestaat in `invoer/sitemap.json` of dat een ander concept ook voorstelt;
-- een percentage of prijsontwikkeling in de lezerskopij, ook uitgeschreven ("twaalf procent", "gestegen"), of een
-  claim die naar X1 verwijst;
+- een percentage of prijsontwikkeling in de lezerskopij, ook uitgeschreven ("twaalf procent", "gestegen", "duurder",
+  "een tiende meer dan vorig jaar"), of een claim die naar X1 verwijst;
 - een getal of maat die niet zo in een geciteerde bron staat. Het buurwoord telt mee: "1,10 m" en "huis 3" passen bij
-  hun bron, maar "8 uur zon" niet, ook al staat "Hof 8" in de bron. Uitgeschreven maten zoals "zes uur" tellen ook;
+  hun bron, maar "8 uur zon" niet, ook al staat "Hof 8" in de bron. Uitgeschreven maten zoals "zes uur" en
+  tijdstippen zoals "half elf" of "om tien uur" tellen ook;
 - een update zonder tabel met wijzigingen ten opzichte van de huidige pagina;
 - 'u' in plaats van 'je';
 - geen vrijgegeven, passend beeld (dan komt er een beeldtaak);
 - kopij uit het sjabloon in plaats van uit opgeslagen modeluitvoer, of opgeslagen kopij die bij andere feedback
   hoort;
-- tekst die na een besluit nog is bewerkt.
+- tekst die na een besluit nog is bewerkt;
+- een regel in de reviewersectie die nog een open beeldtaak noemt terwijl er al een vrijgegeven beeld is gekozen.
 
 ## Bewerken, goedkeuren en afwijzen
 
 **Bewerken**: open het Markdown-bestand in een editor en pas de tekst aan, alles behalve het blok
 "Pad, beeld en controle". Een volgende run laat je tekst staan. Een ander URL-pad zet je onder "Voor de website"
-(`- URL-pad: ...`); de pipeline neemt het over en controleert het opnieuw op dubbelingen. Een wijziging in het blok
+(`- URL-pad: ...`); de pipeline neemt het over en controleert het opnieuw op dubbelingen. Verplaats je een update
+naar een nieuw pad, dan meldt de pipeline dat dit een nieuwe pagina wordt met een doorverwijzing vanaf het oude pad,
+en het log zegt "update P1, verplaatst naar ...". Een wijziging in het blok
 zelf neemt de pipeline niet over: die bewaart je wijziging in `uitvoer/revisies/<sleutel>/pipelineblok-bewerkt-N.md`
 en meldt dat in het document.
 
@@ -93,6 +97,9 @@ en meldt dat in het document.
 ```
 python run.py besluit W50-M1-thema goedgekeurd
 ```
+
+Staat er nog een `FOUT` in de controle (bijvoorbeeld de prijsclaim uit X1), dan weigert de pipeline het goedkeuren.
+Wil je toch goedkeuren, gebruik dan `--ondanks-fout`; het document vermeldt dan welke FOUT je bewust liet staan.
 
 **Afwijzen** kan alleen met een reden:
 
@@ -168,10 +175,12 @@ pagina, en eventuele feedback van de redacteur. De vingerafdruk is een hash van 
 **Modus `opgeslagen`** (standaard, geen sleutel nodig): staat er in `kopij/` een modelantwoord met dezelfde sleutel en
 vingerafdruk, dan gebruikt de pipeline dat. Is er alleen een antwoord voor dezelfde bronnen en hetzelfde onderwerp
 maar met andere feedback (bijvoorbeeld omdat de redacteur iets anders aanpaste dan in bijlage B), dan gebruikt de
-pipeline dat dichtstbijzijnde antwoord en meldt `AANDACHT: De opgeslagen kopij is geschreven bij andere feedback`.
+pipeline dat dichtstbijzijnde antwoord en meldt `AANDACHT: De opgeslagen kopij is geschreven bij andere feedback`,
+met de feedback van toen en van nu. De sectie heet dan "Feedback (controleren ...)" in plaats van "Verwerkte feedback".
 De feedback telt dan niet als verwerkt; de redacteur controleert het of laat het stuk herschrijven. De acht antwoorden in `kopij/` zijn geschreven door Claude (Anthropic,
 Claude Opus 5.5) in een Claude Code-sessie op 25 november 2026, als antwoord op precies deze prompts. Vier ervan
-zijn na een blinde beoordeling op dezelfde dag op één punt herschreven; het veld `herzien` in het bestand zegt wat. De beoordelaar
+zijn na een blinde beoordeling op dezelfde dag herschreven; het veld `herzien` in het bestand zegt wat. Die teksten
+zijn dus niet meer het eerste antwoord op de prompt, maar een door dezelfde sessie bijgestuurde versie. De beoordelaar
 heeft daardoor geen sleutel, account of betaalde dienst nodig, en de voorbeelden zijn reproduceerbaar.
 
 **Sjabloon als vangnet**: verandert de invoer zodat er geen passend antwoord is (bijvoorbeeld een andere week, of W51
@@ -231,8 +240,8 @@ uit, met de commando's uit deze README:
 
 Daarna volgt proef 7 met randgevallen buiten het scenario: een andere bewerking dan in bijlage B, uitgeschreven
 percentages en maten, bewerken na goedkeuren, een verwijderd document, een eigen URL-pad, een wijziging in het
-pipelineblok, een nieuwe foto F5, W51 vóór W50 en de beveiliging van `reset`. Het script controleert telkens het
-waarneembare resultaat en eindigt met "48 van 48 controles geslaagd". In deze map
+pipelineblok, een nieuwe foto F5, een verplaatste update, goedkeuren met een FOUT, W51 vóór W50 en de beveiliging
+van `reset`. Het script controleert telkens het waarneembare resultaat en eindigt met "57 van 57 controles geslaagd". In deze map
 verandert niets. De unittests voor de controles draai je met `python -m unittest discover -s tests`. GitHub Actions
 draait beide bij elke push (workflow "Tests").
 
@@ -248,6 +257,8 @@ draait beide bij elke push (workflow "Tests").
   dag) staat in de claims als "algemene kennis", niet met een bron-ID. De redacteur controleert die formulering.
 - De controle op getallen kijkt naar cijfers met hun buurwoord en naar uitgeschreven getallen met een eenheid ("zes
   uur"). Losse telwoorden zoals "vier bezoekers" controleert ze niet; die staan als claim met bron in de tabel.
+- De controles op prijzen en getallen werken met patronen. Een omschrijving die daar buiten valt ("flink meer
+  waard geworden") vangen ze niet.
 - De controles zijn regels, geen begrip van de tekst. Een verzonnen bewering zonder getal ("allebei lichte kamers")
   vangen ze niet; daarvoor is de claimtabel en de redacteur.
 - De stemcontrole kijkt alleen naar 'je' tegenover 'u'. Of de stem klopt, beoordeelt de redacteur.

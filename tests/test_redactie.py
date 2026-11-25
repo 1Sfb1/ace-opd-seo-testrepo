@@ -86,6 +86,18 @@ class Checks(unittest.TestCase):
         res = r.check(SRC, item(), doc("Reken op 10 cm speling. Je hebt 1,10 m."), CFG, {}, SITE)
         self.assertTrue(any("10 cm" in t for t in levels(res, "AANDACHT")))
 
+    def test_price_rise_in_other_words(self):
+        res = r.check(SRC, item(), doc("Woningen hier worden snel duurder: ruim een tiende meer dan vorig jaar."), CFG, {}, SITE)
+        self.assertTrue(any("prijsontwikkeling" in t for t in levels(res, "FOUT")))
+
+    def test_time_of_day(self):
+        res = r.check(SRC, item(), doc("Je hebt tot half elf zon op het terras."), CFG, {}, SITE)
+        self.assertTrue(any("half elf" in t for t in levels(res, "AANDACHT")))
+
+    def test_half_of_the_difference_is_not_a_price(self):
+        res = r.check(SRC, item(), doc("Wie ze op hetzelfde uur bekijkt, ziet maar de helft van het verschil."), CFG, {}, SITE)
+        self.assertEqual(levels(res, "FOUT"), [])
+
     def test_spelled_out_measure(self):
         res = r.check(SRC, item(), doc("De kamer krijgt zes uur zon, zeg je."), CFG, {}, SITE)
         self.assertTrue(any("zes uur" in t for t in levels(res, "AANDACHT")))

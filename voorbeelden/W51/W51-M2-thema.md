@@ -17,11 +17,11 @@ Je loopt de route met je fiets aan de hand. Bij de haakse bocht merk je dan of j
 
 ## Controle voor je volgende bezoek
 
-Neem een meetlint mee en loop de route twee keer. De eerste keer kijk je alleen. De tweede keer meet je.
+Bij je volgende bezoek heb je genoeg aan een meetlint en de breedte van je fiets. Je vergelijkt dan twee dingen.
 
-- Bij de eerste deur zet je de deur helemaal open en meet je de opening op de smalste plek. Valt hij vanzelf dicht, dan heb je straks een hand nodig om hem open te houden.
-- Bij de haakse bocht kijk je of er ruimte is om je fiets in één beweging de hoek om te krijgen. Twijfel je, meet dan de ruimte in de bocht.
-- Bij de tweede deur meet je opnieuw de opening.
+Het eerste zijn de deuren. Zet ze een voor een helemaal open en meet de opening op de smalste plek. Bij een deur die vanzelf terugvalt, merk je meteen dat je een hand nodig hebt om hem open te houden.
+
+Het tweede is de haakse bocht. Daar zie je of je fiets in één beweging de hoek om komt, of dat je moet steken. Twijfel je, dan meet je ook de ruimte in de bocht.
 
 Leg die maten thuis naast de breedte van je fiets. Is de smalste deur breder dan je fiets en kom je om de bocht, dan werkt deze route voor jou.
 
@@ -58,7 +58,7 @@ Leg die maten thuis naast de breedte van je fiets. Is de smalste deur breder dan
 
 ### Verwerkte feedback
 
-- FB-W50-M2-thema: Sectie 'Controle voor je volgende bezoek': de lezer loopt de route twee keer en meet bij beide deuren en de haakse bocht (B4); thuis vergelijkt de lezer de maten met de fiets.
+- FB-W50-M2-thema: Sectie 'Controle voor je volgende bezoek': de lezer vergelijkt bij het volgende bezoek twee dingen, de twee deuren en de haakse bocht (B4), met meetlint en de breedte van de fiets.
 
 <!-- pipeline:start -->
 ## Pad, beeld en controle
@@ -72,7 +72,7 @@ _Dit blok schrijft de pipeline bij elke run opnieuw. Wijzig het URL-pad onder 'V
 
 ### Controle
 
-- OK: Lopende tekst: 290 woorden (max 600).
+- OK: Lopende tekst: 291 woorden (max 600).
 - OK: URL-pad /gids/looproute-fietsenstalling is nieuw en uniek.
 - OK: Geen onbevestigde uitspraak in de lezerskopij.
 - AANDACHT: Beeldtaak: F4 (hof8-fietsroute.jpg) past inhoudelijk, maar de rechten zijn verlopen. Zoek of laat een vrijgegeven beeld maken over: route naar fietsenstalling (Lindehof).

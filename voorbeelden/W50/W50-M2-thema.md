@@ -70,5 +70,5 @@ _Dit blok schrijft de pipeline bij elke run opnieuw. Wijzig het URL-pad onder 'V
 ### Besluit
 
 - Status: afgewezen
-- Besluit: afgewezen op 2026-11-25T21:13:47+01:00, voor revisie r1. Reden: "Geef de lezer een concrete controle voor het volgende bezoek."
+- Besluit: afgewezen op 2026-11-25T21:33:05+01:00, voor revisie r1. Reden: "Geef de lezer een concrete controle voor het volgende bezoek."
 <!-- pipeline:end -->

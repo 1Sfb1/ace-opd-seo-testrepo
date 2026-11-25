@@ -91,7 +91,7 @@ _Dit blok schrijft de pipeline bij elke run opnieuw. Wijzig het URL-pad onder 'V
 ### Besluit
 
 - Status: goedgekeurd
-- Besluit: goedgekeurd op 2026-11-25T21:13:47+01:00, voor revisie r2
+- Besluit: goedgekeurd op 2026-11-25T21:33:05+01:00, voor revisie r2
 - Toegevoegd door de redacteur: "Meet thuis ook hoe breed je stuur is."
 - Volledige wijziging: voorbeelden/revisies/W50-M1-thema/diff-r1-r2.diff
 <!-- pipeline:end -->

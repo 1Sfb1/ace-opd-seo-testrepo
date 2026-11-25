@@ -91,6 +91,8 @@ class Workspace:
             raise PipelineError(f"Werkmap '{name}' mag alleen letters, cijfers, - en _ bevatten.")
         if name.lower() in RESERVED:
             raise PipelineError(f"'{name}' is geen werkmap: daar staan invoer, kopij of tests. Kies bijvoorbeeld 'uitvoer'.")
+        # Windows paths ignore case, so 'Voorbeelden' is the same folder as 'voorbeelden'
+        name = next((w for w in settings()["werkmappen"] if w.lower() == name.lower()), name)
         self.name = name
         self.dir = ROOT / name
         self.state_path = self.dir / "status.json"
@@ -186,7 +188,12 @@ def choose_question(src: dict, state: dict, key: str, week: str, agent: str) -> 
     reserved in calendar order, so running a later week first does not take an earlier week's question."""
     doc = state["docs"].get(key)
     if doc and doc.get("aanleiding_id") and doc.get("vraagreden"):
-        return doc["aanleiding_id"], doc["vraagreden"], doc.get("botsing", False)
+        # the topic stays; the reason is recomputed, so it no longer says 'not run yet' once that week has run
+        others = {k: v for k, v in state["docs"].items() if k != key}
+        month = edition(src, week)["aanleveren"][:7]
+        mine = next(s for s in calendar_choices(src, {**state, "docs": others}, month) if s[0] == key)
+        why = mine[2] if mine[1] == doc["aanleiding_id"] else doc["vraagreden"]
+        return doc["aanleiding_id"], why, doc.get("botsing", False)
     if not any(c["week"] == week and c["makelaar"] == agent for c in src["kalender"]):
         raise PipelineError(f"Geen onderwerpkalender voor {week} {agent}.")
     month = edition(src, week)["aanleveren"][:7]
@@ -357,7 +364,7 @@ def cell(text: str) -> str:
     return str(text).replace("|", "/").replace("\n", " ")
 
 
-def render_human(src: dict, item: dict, copy: dict) -> str:
+def render_human(src: dict, item: dict, copy: dict, match: str = "exact") -> str:
     p = item["profiel"]
     a = item["aanleiding"]
     out = [f"<!-- sleutel: {item['sleutel']} -->", f"# {copy['kop']}", "", f"_{copy['onderkop']}_", "",
@@ -381,7 +388,7 @@ def render_human(src: dict, item: dict, copy: dict) -> str:
     out += ["", "### Open redactievragen", ""]
     open_q = []
     for q in copy.get("open_vragen") or []:
-        if item.get("beeld") and re.search(rf"\b{item['beeld']}\b", q) and re.search(r"verlopen|beeldtaak", q, re.I):
+        if item.get("beeld") and re.search(r"\bF\d+\b", q) and re.search(r"verlopen|beeldtaak", q, re.I):
             q += f" Opgelost: {item['beeld']} ({item['bestand']}) is nu vrijgegeven en gekozen."
         open_q.append(q)
     out += [f"- {q}" for q in open_q] or ["- Geen."]
@@ -391,7 +398,9 @@ def render_human(src: dict, item: dict, copy: dict) -> str:
         out += [f"| {cell(w['soort'])} | {cell(w['passage'])} | {cell(w['toelichting'])} |" for w in copy["wijzigingen"]]
     done = copy.get("feedback_verwerkt") or []
     if item["feedback"] or done:
-        out += ["", "### Verwerkte feedback", ""]
+        title = ("### Verwerkte feedback" if match != "nabij"
+                 else "### Feedback (controleren: deze kopij is geschreven bij andere feedback)")
+        out += ["", title, ""]
         out += [f"- {f['feedback']}: {f['waar']}" for f in done] or \
                [f"- {fb['id']}: nog niet verwerkt in deze kopij ({fb['tekst']})" for fb in item["feedback"]]
     return norm("\n".join(out))
@@ -475,7 +484,9 @@ def unconfirmed_hits(text: str) -> list[str]:
         hits.append("percentage")
     if re.search(r"prijsstijging|waardestijging|prijsdaling", t) or (
             re.search(r"\b(prijs|prijzen|waarde|woningwaarde)\b", t) and
-            re.search(r"\b(stijg\w*|gestegen|omhoog|duurder|daal\w*|gedaald)\b", t)):
+            re.search(r"\b(stijg\w*|gestegen|omhoog|duurder|daal\w*|gedaald)\b", t)) or \
+            re.search(r"\b(duurder|goedkoper|in waarde)\b|\b(een|ruim een|bijna een) (tiende|kwart|derde)\b|"
+                      r"\b(meer|minder) dan (vorig|een) jaar\b", t):
         hits.append("prijsontwikkeling")
     return hits
 
@@ -494,7 +505,8 @@ def stray_numbers(text: str, known: str) -> list[str]:
         nxt = t[i + 1] if i + 1 < len(t) else ""
         if (prev, tok) not in pairs and (tok, nxt) not in pairs:
             stray.append(" ".join(x for x in (prev, tok, nxt) if x))
-    for m in re.finditer(rf"\b({NUMBER_WORDS})\s+({UNITS})\b", text.lower()):
+    for m in re.finditer(rf"\b({NUMBER_WORDS})\s+({UNITS})\b|\bhalf ({NUMBER_WORDS})\b|"
+                         rf"\b(om|tot|vanaf|na|voor) ({NUMBER_WORDS}) uur\b|\b\d{{1,2}}[.:]\d{{2}}\b", text.lower()):
         if m.group(0) not in known.lower():
             stray.append(m.group(0))
     return sorted(set(stray))
@@ -532,7 +544,11 @@ def check(src: dict, item: dict, human: str, cfg: dict, all_docs: dict, site: li
     elif not re.fullmatch(r"/[a-z0-9]+(?:[/-][a-z0-9]+)*", path):
         add("FOUT", f"URL-pad {path} heeft geen geldige vorm (kleine letters, cijfers, - en /).")
     others = [k for k, x in all_docs.items() if x.get("url_pad") == path and k != item["sleutel"]]
-    if item["keuze"] == "update" and path == (item.get("pagina") or {}).get("pad"):
+    page_path = (item.get("pagina") or {}).get("pad")
+    if item["keuze"] == "update" and path != page_path:
+        add("AANDACHT", f"Dit is een update van {page_path} ({item['pagina_id']}), maar het URL-pad is nu {path}. Dat "
+                        f"wordt een nieuwe pagina: regel een doorverwijzing van {page_path}, of zet het pad terug.")
+    if item["keuze"] == "update" and path == page_path:
         if any(p["pad"] == path for p in site):
             add("OK", f"URL-pad {path}: update van een bestaande pagina.")
         else:
@@ -575,6 +591,12 @@ def check(src: dict, item: dict, human: str, cfg: dict, all_docs: dict, site: li
         add("AANDACHT", "De tekst spreekt de lezer niet aan met je.")
     if item["beeldstatus"] == "vrijgegeven":
         add("OK", f"Beeld {item['beeld']} ({item['bestand']}) is vrijgegeven.")
+        reviewer = human.split(READER_END, 1)[-1]
+        stale = [l for l in reviewer.split("\n") if re.search(r"\bF\d+\b", l)
+                 and re.search(r"verlopen|beeldtaak", l, re.I) and "Opgelost:" not in l]
+        if stale:
+            add("AANDACHT", f"De reviewersectie noemt nog een open beeldtaak, maar {item['beeld']} ({item['bestand']}) "
+                            f"is vrijgegeven en gekozen. Werk die regel bij.")
     else:
         add("AANDACHT", f"Beeldtaak: {item['taak']}")
     if item["botsing"]:
@@ -614,6 +636,8 @@ def render_pipeline(src: dict, ws: Workspace, item: dict, doc: dict, checks: lis
             out.append(f"- Verwijderd door de redacteur: \"{s}\"")
         if b.get("diff"):
             out.append(f"- Volledige wijziging: {b['diff']}")
+        for e in b.get("ondanks_fout", []):
+            out.append(f"- Goedgekeurd ondanks FOUT: {e}")
     if doc.get("handmatig") and doc["status"] == "concept":
         out.append(f"- Handmatig bewerkt na het genereren; je tekst blijft bij een nieuwe run staan (revisie r{doc['revisies'][-1]['nr']}).")
     for note in doc.get("meldingen", []):
@@ -661,7 +685,7 @@ def run_edition(week: str, ws_name: str = "uitvoer", mode: str | None = None) ->
         url_now = doc.get("url_pad") if doc.get("url_bron") == "redacteur" else None
         if url_now:
             item["url_pad"] = url_now
-        fresh = render_human(src, item, copy)
+        fresh = render_human(src, item, copy, match or "sjabloon")
         if "gen_hash" not in doc:
             human, action = fresh, "nieuw"
             doc.update({"status": "concept", "revisies": [], "handmatig": False})
@@ -716,6 +740,7 @@ def run_edition(week: str, ws_name: str = "uitvoer", mode: str | None = None) ->
         doc.update({k: item[k] for k in ("week", "maand", "makelaar", "soort", "aanleiding_id", "keuze", "pagina_id",
                                          "keuzereden", "botsing", "url_pad", "beeld", "beeldstatus", "taak")})
         doc["documentpad"] = ws.rel(doc_path)
+        doc["pagina_pad"] = (item.get("pagina") or {}).get("pad")
         generated_now = digest(human) == digest(fresh)
         if generated_now or "kopij" not in doc:
             doc["kopij"] = kopij
@@ -752,11 +777,11 @@ def extra_checks(doc: dict, item: dict, human: str, copy: dict) -> list[tuple[st
         out.append(("AANDACHT", "Kopij uit het sjabloon: er is geen opgeslagen modeluitvoer voor deze invoer. Laat het "
                                 "stuk herschrijven (README, 'Nieuwe tekst laten schrijven')."))
     if kop["bron"] == "nabij" and current:
-        wanted = ", ".join(fb["id"] for fb in item["feedback"]) or "geen"
-        written = ", ".join(f["feedback"] for f in copy.get("feedback_verwerkt", [])) or "geen"
-        out.append(("AANDACHT", f"De opgeslagen kopij is geschreven bij andere feedback (verwerkt: {written}; nu geldt: "
-                                f"{wanted}). Controleer of de feedback van de redacteur in de tekst zit, of laat het "
-                                f"stuk herschrijven met de prompt van deze run."))
+        wanted = "; ".join(f"{fb['id']}: \"{fb['tekst']}\"" for fb in item["feedback"]) or "geen feedback"
+        written = "; ".join(f"{f['id']}: \"{f['tekst']}\"" for f in copy.get("feedback_bij_schrijven", [])) or "geen feedback"
+        out.append(("AANDACHT", f"De opgeslagen kopij is geschreven bij andere feedback. Toen: {written}. Nu: {wanted}. "
+                                f"Controleer of de feedback van nu in de tekst zit, of laat het stuk herschrijven met de "
+                                f"prompt van deze run."))
     b = doc.get("besluit")
     doc["na_besluit"] = False
     if b and doc["status"] in ("goedgekeurd", "afgewezen") and doc["revisies"][-1]["nr"] != b["revisie"]:
@@ -783,7 +808,16 @@ def add_revision(ws: Workspace, doc: dict, key: str, human: str, kind: str) -> N
 
 # ---------------------------------------------------------------- decisions
 
-def decide(key: str, verdict: str, reason: str | None, ws_name: str = "uitvoer") -> str:
+def current_checks(ws: Workspace, state: dict, key: str, human: str) -> list[tuple[str, str]]:
+    doc = state["docs"][key]
+    src, site, cfg = source(), sitemap(), settings()
+    item = next(i for i in plan(src, ws.load(), doc["week"]) if i["sleutel"] == key)
+    item["url_voorstel"] = item["url_pad"]
+    item["url_pad"] = parse(human)["url_pad"] or doc.get("url_pad", item["url_pad"])
+    return check(src, item, human, cfg, state["docs"], site)
+
+
+def decide(key: str, verdict: str, reason: str | None, ws_name: str = "uitvoer", force: bool = False) -> str:
     if verdict not in ("goedgekeurd", "afgewezen"):
         raise PipelineError("Besluit is 'goedgekeurd' of 'afgewezen'.")
     if verdict == "afgewezen" and not (reason or "").strip():
@@ -797,6 +831,10 @@ def decide(key: str, verdict: str, reason: str | None, ws_name: str = "uitvoer")
     if not path.exists():
         raise PipelineError(f"{doc['documentpad']} ontbreekt. Draai de editie opnieuw; die herstelt het bestand.")
     human, _ = split_doc(path.read_text(encoding="utf-8"))
+    errors = [t for lvl, t in current_checks(ws, state, key, human) if lvl == "FOUT"]
+    if verdict == "goedgekeurd" and errors and not force:
+        raise PipelineError(f"{key} heeft nog een FOUT: " + " ".join(errors) +
+                            " Herstel de tekst, of keur bewust goed met --ondanks-fout.")
     if digest(human) != doc["revisies"][-1]["hash"]:
         add_revision(ws, doc, key, human, "handmatig")
     first = (ROOT / doc["revisies"][0]["pad"]).read_text(encoding="utf-8")
@@ -813,7 +851,8 @@ def decide(key: str, verdict: str, reason: str | None, ws_name: str = "uitvoer")
         diff_rel = ws.rel(diff_path)
     doc["status"] = verdict
     doc["besluit"] = {"besluit": verdict, "reden": (reason or "").strip(), "tijd": now(), "revisie": rev,
-                      "toegevoegd": added, "verwijderd": removed, "diff": diff_rel}
+                      "toegevoegd": added, "verwijderd": removed, "diff": diff_rel,
+                      "ondanks_fout": errors if verdict == "goedgekeurd" else []}
     fid = f"FB-{key}"
     if doc["soort"] == "thema" and (verdict == "afgewezen" or added or removed):
         text = reason.strip() if verdict == "afgewezen" else \
@@ -905,7 +944,8 @@ def rows_for(ws: Workspace, state: dict) -> list[dict]:
         rows.append({"werkmap": ws.name, "week": d["week"], "makelaar": d["makelaar"], "soort": d["soort"], "sleutel": key,
                      "documentpad": d["documentpad"], "status": status,
                      "bron_ids": " ".join(d.get("bron_ids", [])), "aanleiding": d["aanleiding_id"],
-                     "paginakeuze": d["keuze"] + (f" {d['pagina_id']}" if d.get("pagina_id") else ""),
+                     "paginakeuze": d["keuze"] + (f" {d['pagina_id']}" if d.get("pagina_id") else "")
+                     + (f", verplaatst naar {d['url_pad']}" if d.get("pagina_pad") and d["url_pad"] != d["pagina_pad"] else ""),
                      "keuzereden": d["keuzereden"], "url_pad": d["url_pad"],
                      "beeld": d["beeld"] or "", "beeldstatus": d["beeldstatus"],
                      "besluit": b.get("besluit", ""), "reden": b.get("reden", ""),
@@ -942,7 +982,7 @@ def write_logs(src: dict, ws: Workspace, state: dict) -> None:
 
 def reset(ws_name: str = "uitvoer", sure: bool = False) -> str:
     ws = Workspace(ws_name)
-    if ws_name in PROTECTED and not sure:
+    if ws_name.lower() in PROTECTED and not sure:
         raise PipelineError(f"{ws_name}/ bevat de meegeleverde voorbeelden. Wil je die echt wissen, voeg dan --ja toe.")
     if ws.dir.exists():
         shutil.rmtree(ws.dir)

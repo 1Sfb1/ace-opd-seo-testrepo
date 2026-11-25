@@ -108,6 +108,10 @@ def edge_cases(new_repo):
     ok("andere bewerking: W51 gebruikt nog de opgeslagen kopij, geen sjabloon",
        "## Bereid je thuis voor" in reader(repo / "uitvoer/W51/W51-M1-thema.md") and "Kopij uit het sjabloon" not in doc)
     ok("andere bewerking: de redacteur krijgt een controlevraag over de feedback", "geschreven bij andere feedback" in doc)
+    ok("andere bewerking: de melding zegt wat er verschilt", "Toen: FB-W50-M1-thema" in doc and "Nu: FB-W50-M1-thema" in doc
+       and "Dan lopen we samen de route." in doc.split("Nu: ", 1)[1].split("\n", 1)[0])
+    ok("andere bewerking: de sectie heet niet 'Verwerkte feedback'", "### Feedback (controleren" in doc
+       and "### Verwerkte feedback" not in doc)
     ok("Ivo's afwijking is gelijk aan bijlage B: feedback geldt als verwerkt",
        "FB-W50-M2-thema" in log_rows(repo)["W51-M2-thema"]["feedback_verwerkt"])
 
@@ -119,6 +123,10 @@ def edge_cases(new_repo):
     doc = p.read_text(encoding="utf-8")
     ok("'twaalf procent gestegen' is een FOUT", "FOUT: De lezerskopij noemt een percentage en prijsontwikkeling" in doc)
     ok("'10 cm' en '8 uur' vragen aandacht", "10 cm" in doc.split("### Controle")[1] and "8 uur" in doc.split("### Controle")[1])
+    refused, err = fails(repo, "besluit", "W50-M2-terugblik", "goedgekeurd")
+    ok("goedkeuren met een FOUT wordt geweigerd", refused and "--ondanks-fout" in err)
+    run(repo, "besluit", "W50-M2-terugblik", "goedgekeurd", "--ondanks-fout")
+    ok("bewust goedkeuren ondanks FOUT staat in het document", "Goedgekeurd ondanks FOUT" in p.read_text(encoding="utf-8"))
 
     # editing after approval is visible
     p = repo / "uitvoer/W50/W50-M1-thema.md"
@@ -154,6 +162,18 @@ def edge_cases(new_repo):
     run(repo, "editie", "--week", "W51")
     ok("nieuwe foto F5 sluit de beeldtaak", log_rows(repo)["W51-M2-thema"]["beeld"] == "F5"
        and log_rows(repo)["W51-M2-terugblik"]["beeld"] == "F5")
+    terug = (repo / "uitvoer/W51/W51-M2-terugblik.md").read_text(encoding="utf-8")
+    ok("onbewerkt concept: de oude beeldregel krijgt 'Opgelost: F5'", "Opgelost: F5" in terug
+       and "noemt nog een open beeldtaak" not in terug)
+    ok("bewerkt concept: de oude beeldregel geeft een melding",
+       "noemt nog een open beeldtaak" in (repo / "uitvoer/W51/W51-M2-thema.md").read_text(encoding="utf-8"))
+
+    # an update moved to a new path is reported as a new page plus a redirect
+    p = repo / "uitvoer/W50/W50-M1-thema.md"
+    edit(p, "- URL-pad: /gids/fietsberging", "- URL-pad: /gids/bakfiets-meten")
+    run(repo, "editie", "--week", "W50")
+    ok("verplaatste update wordt gemeld en gelogd", "Dit is een update van /gids/fietsberging" in p.read_text(encoding="utf-8")
+       and "verplaatst naar /gids/bakfiets-meten" in log_rows(repo)["W50-M1-thema"]["paginakeuze"])
 
     # running W51 before W50 keeps the calendar order
     repo = new_repo("volgorde")
@@ -163,9 +183,13 @@ def edge_cases(new_repo):
     rows = log_rows(repo)
     ok("W51 eerst: Ivo krijgt Q4, W50 houdt Q2, geen FOUT", rows["W51-M2-thema"]["aanleiding"] == "Q4"
        and rows["W50-M2-thema"]["aanleiding"] == "Q2" and "FOUT" not in rows["W50-M2-thema"]["aandacht"])
+    run(repo, "editie", "--week", "W51")
+    reason = log_rows(repo)["W51-M2-thema"]["keuzereden"]
+    ok("W51 eerst: na W50 noemt de keuzereden de echte status", "nog niet gedraaid" not in reason and "concept" in reason)
 
     # guards
     ok("reset van de voorbeelden vraagt om --ja", fails(repo, "reset", "--werkmap", "voorbeelden")[0])
+    ok("ook met hoofdletter (Voorbeelden)", fails(repo, "reset", "--werkmap", "Voorbeelden")[0])
     ok("invoer is geen werkmap", fails(repo, "editie", "--week", "W50", "--werkmap", "invoer")[0])
 
 
