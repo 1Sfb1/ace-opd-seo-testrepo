@@ -1,0 +1,37 @@
+{
+  "sleutel": "W50-M2-thema",
+  "vingerafdruk": "3e6d485c2f",
+  "model": "Claude Opus 5.5 (claude-opus-5-5) in Claude Code, 25-11-2026; antwoord op de prompt met dezelfde vingerafdruk",
+  "prompt": "zie W50-M2-thema-3e6d485c2f.txt in de map prompts/ van de werkmap",
+  "kop": "Woonkamer op het oosten of op het westen: wat is het verschil?",
+  "onderkop": "Twee woonkamers in Hof 8, twee momenten van de dag",
+  "tekst": "Het verschil zit in het moment waarop de zon binnenkomt. Een woonkamer op het oosten krijgt de zon in de ochtend. Een woonkamer op het westen krijgt hem later op de dag.\n\nIn Lindehof zie je dat bij de twee voorbeeldwoningen van Hof 8. De ene woonkamer ligt op het oosten, de andere op het westen. Allebei lichte kamers, maar niet op hetzelfde moment.\n\n## De woonkamer op het oosten\n\nOntbijt je graag aan tafel bij het raam? Dan valt het licht hier binnen als jij er zit. Later op de dag is het licht in deze kamer rustiger.\n\n## De woonkamer op het westen\n\nBen je vooral 's avonds thuis? Dan heb je hier het licht in de uren dat jij er bent. 's Ochtends is deze kamer juist rustiger.\n\n## Welke past bij jou?\n\nDat hangt af van je dag. Bedenk wanneer je het meest in de woonkamer zit, en kijk welke kant daarbij past. Twijfel je, kom dan nog een keer kijken.",
+  "metatitel": "Woonkamer op het oosten of westen: wat is het verschil?",
+  "metabeschrijving": "Een woonkamer op het oosten heeft ochtendlicht, een woonkamer op het westen licht later op de dag. Ivo legt het verschil uit met Hof 8 in Lindehof.",
+  "tags": [
+    "Lindehof",
+    "lichtinval",
+    "woonkamer"
+  ],
+  "waarom_nu": "Zoekvraag Q2 staat voor W50 in de kalender, en twee bezoekers vergeleken deze week de lichtinval (N2).",
+  "claims": [
+    {
+      "claim": "Bij Hof 8 ligt de ene woonkamer op het oosten, de andere op het westen",
+      "bron": "B2"
+    },
+    {
+      "claim": "Oosten: zon in de ochtend; westen: zon later op de dag",
+      "bron": "algemene kennis"
+    },
+    {
+      "claim": "Bezoekers vergeleken deze week de lichtinval",
+      "bron": "N2"
+    }
+  ],
+  "open_vragen": [
+    "Zonuren zijn voor Hof 8 niet bekend; de tekst noemt daarom geen tijden.",
+    "Welke woning van Hof 8 ligt op het oosten en welke op het westen? De bron zegt alleen dat er één van elk is."
+  ],
+  "wijzigingen": [],
+  "feedback_verwerkt": []
+}

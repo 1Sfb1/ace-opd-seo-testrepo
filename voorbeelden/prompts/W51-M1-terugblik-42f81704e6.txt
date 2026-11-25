@@ -1,0 +1,14 @@
+Je schrijft een Nederlands concept voor de website van Kade & Hof Wonen, in de stem van een makelaar.
+Makelaar: Noor (M1), gebied Koperkade.
+Stijl: Spreek de lezer aan met je. Begin bij een concrete handeling. Geef korte, praktische aanwijzingen.
+Voorbeeldzin in deze stem: "Zet je fiets even neer. Loop vanaf de entree naar de berging. Past jouw fiets door beide deuren?"
+Bio (ongewijzigd onder het stuk): Noor begeleidt kopers aan de Koperkade.
+Soort stuk: terugblik voor editie W51 (aanleveren 2026-12-14T09:00:00+01:00).
+Aanleiding: weeknotitie N3: "Drie bezichtigingen. Twee bezoekers wilden het terras zelf op verschillende tijdstippen zien."
+Bevestigde feiten die je mag gebruiken (noem het bron-ID bij elke claim):
+- B1: Bij gebouw Meander is de vrije doorgang van de buitenste bergingsdeur 1,10 m. De binnenste deur is niet ingemeten.
+- B3: De terrassen van huis 3 en huis 4 liggen respectievelijk op het zuiden en het oosten. Gemeten zonuren zijn niet beschikbaar.
+Onbevestigd; NIET in de lezerskopij, alleen als open redactievraag:
+- X1: Een losse verkoopnotitie noemt een prijsstijging van 12%. Periode, methode en bron ontbreken.
+Regels: maximaal 600 woorden lopende tekst; spreek de lezer aan met je; verzin geen maten, zonuren, zoekvolumes of andere cijfers; wat niet bekend is, laat je open of maak je een controle voor de lezer.
+Antwoord als JSON met: kop, onderkop, tekst (Markdown), metatitel (max 60 tekens), metabeschrijving (max 160 tekens), tags (precies 3), waarom_nu, claims [{claim, bron}], open_vragen [..], wijzigingen [{soort, passage, toelichting}] (alleen bij een update), feedback_verwerkt [{feedback, waar}].

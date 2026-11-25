@@ -1,0 +1,45 @@
+{
+  "sleutel": "W50-M1-terugblik",
+  "vingerafdruk": "038ed0a6aa",
+  "model": "Claude Opus 5.5 (claude-opus-5-5) in Claude Code, 25-11-2026; antwoord op de prompt met dezelfde vingerafdruk",
+  "prompt": "zie W50-M1-terugblik-038ed0a6aa.txt in de map prompts/ van de werkmap",
+  "kop": "Zes bezichtigingen, één vraag: past de bakfiets?",
+  "onderkop": "Noor over haar week aan de Koperkade",
+  "tekst": "Pak een meetlint en houd het tegen je bakfiets. Eén bezoeker deed dat deze week al, en dat was een goed idee.\n\nIk had deze week zes bezichtigingen aan de Koperkade. Vier bezoekers vroegen hetzelfde: past mijn bakfiets door de bergingsdeur?\n\nBij gebouw Meander weet ik een deel van het antwoord. De buitenste bergingsdeur heeft een vrije doorgang van 1,10 m. De binnenste deur is nog niet ingemeten. Of je bakfiets tot in de berging komt, weet je dus pas als je de hele route hebt gemeten.\n\nZo doe je dat tijdens je bezichtiging:\n\n- Meet thuis de breedste plek van je bakfiets.\n- Neem het meetlint mee.\n- Loop vanaf de entree naar de berging en meet elke deur onderweg.\n\nIn de bijgewerkte gids over de fietsberging lees je stap voor stap hoe je de hele route controleert.",
+  "metatitel": "Weekbericht Koperkade: past je bakfiets in de berging?",
+  "metabeschrijving": "Noor over haar week aan de Koperkade: vier bezoekers vroegen of hun bakfiets door de bergingsdeur past. Zo meet je dat zelf.",
+  "tags": [
+    "Koperkade",
+    "bakfiets",
+    "bezichtiging"
+  ],
+  "waarom_nu": "Vier van de zes bezoekers stelden deze week dezelfde vraag over de bergingsdeur (N1). In dezelfde editie wordt de gids over de fietsberging bijgewerkt.",
+  "claims": [
+    {
+      "claim": "Zes bezichtigingen deze week",
+      "bron": "N1"
+    },
+    {
+      "claim": "Vier bezoekers vroegen of hun bakfiets door de bergingsdeur past",
+      "bron": "N1"
+    },
+    {
+      "claim": "Eén bezoeker nam een meetlint mee",
+      "bron": "N1"
+    },
+    {
+      "claim": "De buitenste bergingsdeur van Meander heeft een vrije doorgang van 1,10 m",
+      "bron": "B1"
+    },
+    {
+      "claim": "De binnenste deur is niet ingemeten",
+      "bron": "B1"
+    }
+  ],
+  "open_vragen": [
+    "X1 (onbevestigd): een losse verkoopnotitie noemt een prijsstijging van 12%, zonder periode, methode of bron. Niet gebruikt. Wil de redactie dit laten uitzoeken?",
+    "Mag de laatste zin een link krijgen naar /gids/fietsberging?"
+  ],
+  "wijzigingen": [],
+  "feedback_verwerkt": []
+}

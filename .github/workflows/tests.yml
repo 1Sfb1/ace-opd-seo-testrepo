@@ -1,0 +1,24 @@
+name: Tests
+on: [push, pull_request]
+jobs:
+  tests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Unit tests
+        run: python -m unittest discover -s tests -v
+      - name: Trials from the assignment on a clean copy
+        run: python proeven.py
+      - name: Example output is reproducible
+        run: |
+          python run.py editie --week W50 --werkmap controle
+          python run.py bijlage-b --werkmap controle
+          python run.py editie --week W50 --werkmap controle
+          python run.py editie --week W51 --werkmap controle
+          for f in voorbeelden/W5*/*.md; do
+            g="controle/${f#voorbeelden/}"
+            diff <(sed '/<!-- pipeline:start -->/,$d' "$f") <(sed '/<!-- pipeline:start -->/,$d' "$g")
+          done

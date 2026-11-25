@@ -1,0 +1,40 @@
+{
+  "sleutel": "W50-M2-terugblik",
+  "vingerafdruk": "45ef717406",
+  "model": "Claude Opus 5.5 (claude-opus-5-5) in Claude Code, 25-11-2026; antwoord op de prompt met dezelfde vingerafdruk",
+  "prompt": "zie W50-M2-terugblik-45ef717406.txt in de map prompts/ van de werkmap",
+  "kop": "Dezelfde woonkamer op een ander uur",
+  "onderkop": "Ivo over zijn week in Lindehof",
+  "tekst": "Deze week liet ik vier keer een woning in Lindehof zien. Twee bezoekers vergeleken de lichtinval in de woonkamer. Dat kun je op twee manieren doen.\n\nDe eerste manier: je kijkt goed rond tijdens de bezichtiging en vergelijkt wat je op dat moment ziet. Dat gaat snel, maar je ziet de kamer op één moment van de dag.\n\nDe tweede manier: je komt op een ander tijdstip terug. Eén bezoeker wilde dat deze week. Dan zie je of het licht op een andere plek in de kamer valt.\n\nBij de twee voorbeeldwoningen van Hof 8 maakt dat uit. De ene woonkamer ligt op het oosten, de andere op het westen. Wie ze op hetzelfde uur bekijkt, ziet maar de helft van het verschil.\n\nWil je de lichtinval echt vergelijken? Plan je tweede bezoek dan op een ander deel van de dag dan je eerste.",
+  "metatitel": "Weekbericht Lindehof: dezelfde woonkamer op een ander uur",
+  "metabeschrijving": "Ivo over zijn week in Lindehof: bezoekers vergeleken de lichtinval in de woonkamer. Waarom een tweede bezoek op een ander tijdstip helpt.",
+  "tags": [
+    "Lindehof",
+    "lichtinval",
+    "bezichtiging"
+  ],
+  "waarom_nu": "Twee van de vier bezoekers vergeleken deze week de lichtinval; één wilde op een ander tijdstip terugkomen (N2).",
+  "claims": [
+    {
+      "claim": "Vier bezichtigingen deze week",
+      "bron": "N2"
+    },
+    {
+      "claim": "Twee bezoekers vergeleken de lichtinval in de woonkamer",
+      "bron": "N2"
+    },
+    {
+      "claim": "Eén bezoeker wilde op een ander tijdstip terugkomen",
+      "bron": "N2"
+    },
+    {
+      "claim": "Bij Hof 8 ligt de ene woonkamer op het oosten, de andere op het westen",
+      "bron": "B2"
+    }
+  ],
+  "open_vragen": [
+    "Er zijn geen gemeten zonuren of lichtmetingen voor Hof 8; de tekst noemt daarom geen tijden."
+  ],
+  "wijzigingen": [],
+  "feedback_verwerkt": []
+}

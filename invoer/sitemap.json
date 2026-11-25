@@ -1,0 +1,30 @@
+{
+  "toelichting": "Bestaande paden op de website (bijlage C). Voeg hier een pad toe als er een pagina bijkomt; de pipeline meldt dan een dubbel pad.",
+  "paginas": [
+    {
+      "pad": "/gids/fietsberging",
+      "titel": "Past je fiets in de berging van Meander?",
+      "bron": "P1"
+    },
+    {
+      "pad": "/gids/bezichtiging-voorbereiden",
+      "titel": "Zo bereid je een bezichtiging voor",
+      "bron": "P2"
+    },
+    {
+      "pad": "/gids/terras-onderhouden",
+      "titel": "Je terras het hele jaar bruikbaar houden",
+      "bron": "P3"
+    },
+    {
+      "pad": "/koperkade",
+      "titel": "Wonen aan de Koperkade",
+      "bron": "P4"
+    },
+    {
+      "pad": "/lindehof",
+      "titel": "Wonen in Lindehof",
+      "bron": "P5"
+    }
+  ]
+}

@@ -1,0 +1,384 @@
+{
+  "docs": {
+    "W50-M1-thema": {
+      "soort": "thema",
+      "maand": "2026-12",
+      "aanleiding_id": "Q1",
+      "vraagreden": "Voorkeur Q1 uit de onderwerpkalender; nog vrij in 2026-12.",
+      "botsing": false,
+      "status": "goedgekeurd",
+      "revisies": [
+        {
+          "nr": 1,
+          "soort": "gegenereerd",
+          "hash": "57a973b39bd1",
+          "pad": "voorbeelden/revisies/W50-M1-thema/r1-gegenereerd.md",
+          "tijd": "2026-11-25T20:50:54+01:00"
+        },
+        {
+          "nr": 2,
+          "soort": "handmatig",
+          "hash": "7a5dd84a9e2a",
+          "pad": "voorbeelden/revisies/W50-M1-thema/r2-handmatig.md",
+          "tijd": "2026-11-25T20:50:54+01:00"
+        }
+      ],
+      "handmatig": false,
+      "gen_hash": "57a973b39bd1",
+      "week": "W50",
+      "makelaar": "M1",
+      "keuze": "update",
+      "pagina_id": "P1",
+      "keuzereden": "Voorkeur Q1 uit de onderwerpkalender; nog vrij in 2026-12. De zoekvraag hoort bij bestaande pagina /gids/fietsberging (P1): update, geen nieuwe pagina.",
+      "url_pad": "/gids/fietsberging",
+      "beeld": "F1",
+      "beeldstatus": "vrijgegeven",
+      "taak": null,
+      "documentpad": "voorbeelden/W50/W50-M1-thema.md",
+      "kopij": {
+        "bron": "opgeslagen",
+        "bestand": "kopij/W50-M1-thema-ea6a0e9d24.json",
+        "fingerprint": "ea6a0e9d24"
+      },
+      "aandacht": [],
+      "bron_ids": [
+        "Q1",
+        "B1",
+        "P1"
+      ],
+      "besluit": {
+        "besluit": "goedgekeurd",
+        "reden": "",
+        "tijd": "2026-11-25T20:50:54+01:00",
+        "revisie": 2,
+        "toegevoegd": [
+          "Meet thuis ook hoe breed je stuur is."
+        ],
+        "verwijderd": [],
+        "diff": "voorbeelden/revisies/W50-M1-thema/diff-r1-r2.diff"
+      }
+    },
+    "W50-M2-thema": {
+      "soort": "thema",
+      "maand": "2026-12",
+      "aanleiding_id": "Q2",
+      "vraagreden": "Voorkeur Q2 uit de onderwerpkalender; nog vrij in 2026-12.",
+      "botsing": false,
+      "status": "afgewezen",
+      "revisies": [
+        {
+          "nr": 1,
+          "soort": "gegenereerd",
+          "hash": "a645ad5ad5d7",
+          "pad": "voorbeelden/revisies/W50-M2-thema/r1-gegenereerd.md",
+          "tijd": "2026-11-25T20:50:54+01:00"
+        }
+      ],
+      "handmatig": false,
+      "gen_hash": "a645ad5ad5d7",
+      "week": "W50",
+      "makelaar": "M2",
+      "keuze": "nieuw",
+      "pagina_id": null,
+      "keuzereden": "Voorkeur Q2 uit de onderwerpkalender; nog vrij in 2026-12. Geen bestaande pagina voor deze zoekvraag: nieuwe pagina.",
+      "url_pad": "/gids/lichtinval-woonkamer",
+      "beeld": "F2",
+      "beeldstatus": "vrijgegeven",
+      "taak": null,
+      "documentpad": "voorbeelden/W50/W50-M2-thema.md",
+      "kopij": {
+        "bron": "opgeslagen",
+        "bestand": "kopij/W50-M2-thema-3e6d485c2f.json",
+        "fingerprint": "3e6d485c2f"
+      },
+      "aandacht": [],
+      "bron_ids": [
+        "N2",
+        "Q2",
+        "B2"
+      ],
+      "besluit": {
+        "besluit": "afgewezen",
+        "reden": "Geef de lezer een concrete controle voor het volgende bezoek.",
+        "tijd": "2026-11-25T20:50:54+01:00",
+        "revisie": 1,
+        "toegevoegd": [],
+        "verwijderd": [],
+        "diff": null
+      }
+    },
+    "W50-M1-terugblik": {
+      "status": "concept",
+      "revisies": [
+        {
+          "nr": 1,
+          "soort": "gegenereerd",
+          "hash": "54b9e1756acc",
+          "pad": "voorbeelden/revisies/W50-M1-terugblik/r1-gegenereerd.md",
+          "tijd": "2026-11-25T20:50:54+01:00"
+        }
+      ],
+      "handmatig": false,
+      "gen_hash": "54b9e1756acc",
+      "week": "W50",
+      "maand": "2026-12",
+      "makelaar": "M1",
+      "soort": "terugblik",
+      "aanleiding_id": "N1",
+      "keuze": "terugblik",
+      "pagina_id": null,
+      "keuzereden": "Weekterugblik op notitie N1.",
+      "botsing": false,
+      "url_pad": "/weekbericht/2026-w50-koperkade",
+      "beeld": "F1",
+      "beeldstatus": "vrijgegeven",
+      "taak": null,
+      "documentpad": "voorbeelden/W50/W50-M1-terugblik.md",
+      "kopij": {
+        "bron": "opgeslagen",
+        "bestand": "kopij/W50-M1-terugblik-038ed0a6aa.json",
+        "fingerprint": "038ed0a6aa"
+      },
+      "aandacht": [],
+      "bron_ids": [
+        "N1",
+        "B1"
+      ]
+    },
+    "W50-M2-terugblik": {
+      "status": "concept",
+      "revisies": [
+        {
+          "nr": 1,
+          "soort": "gegenereerd",
+          "hash": "1f1cfeb7e33e",
+          "pad": "voorbeelden/revisies/W50-M2-terugblik/r1-gegenereerd.md",
+          "tijd": "2026-11-25T20:50:54+01:00"
+        }
+      ],
+      "handmatig": false,
+      "gen_hash": "1f1cfeb7e33e",
+      "week": "W50",
+      "maand": "2026-12",
+      "makelaar": "M2",
+      "soort": "terugblik",
+      "aanleiding_id": "N2",
+      "keuze": "terugblik",
+      "pagina_id": null,
+      "keuzereden": "Weekterugblik op notitie N2.",
+      "botsing": false,
+      "url_pad": "/weekbericht/2026-w50-lindehof",
+      "beeld": "F2",
+      "beeldstatus": "vrijgegeven",
+      "taak": null,
+      "documentpad": "voorbeelden/W50/W50-M2-terugblik.md",
+      "kopij": {
+        "bron": "opgeslagen",
+        "bestand": "kopij/W50-M2-terugblik-45ef717406.json",
+        "fingerprint": "45ef717406"
+      },
+      "aandacht": [],
+      "bron_ids": [
+        "N2",
+        "B2"
+      ]
+    },
+    "W51-M1-thema": {
+      "soort": "thema",
+      "maand": "2026-12",
+      "aanleiding_id": "Q3",
+      "vraagreden": "Voorkeur Q3 uit de onderwerpkalender; nog vrij in 2026-12.",
+      "botsing": false,
+      "status": "concept",
+      "revisies": [
+        {
+          "nr": 1,
+          "soort": "gegenereerd",
+          "hash": "077972001817",
+          "pad": "voorbeelden/revisies/W51-M1-thema/r1-gegenereerd.md",
+          "tijd": "2026-11-25T20:50:54+01:00"
+        }
+      ],
+      "handmatig": false,
+      "gen_hash": "077972001817",
+      "week": "W51",
+      "makelaar": "M1",
+      "keuze": "nieuw",
+      "pagina_id": null,
+      "keuzereden": "Voorkeur Q3 uit de onderwerpkalender; nog vrij in 2026-12. Geen bestaande pagina voor deze zoekvraag: nieuwe pagina.",
+      "url_pad": "/gids/terrasligging",
+      "beeld": "F3",
+      "beeldstatus": "vrijgegeven",
+      "taak": null,
+      "documentpad": "voorbeelden/W51/W51-M1-thema.md",
+      "kopij": {
+        "bron": "opgeslagen",
+        "bestand": "kopij/W51-M1-thema-1927b26971.json",
+        "fingerprint": "1927b26971"
+      },
+      "aandacht": [],
+      "bron_ids": [
+        "N3",
+        "Q3",
+        "B3"
+      ]
+    },
+    "W51-M2-thema": {
+      "soort": "thema",
+      "maand": "2026-12",
+      "aanleiding_id": "Q4",
+      "vraagreden": "Voorkeur Q2 is in 2026-12 al gebruikt door W50-M2-thema (status: afgewezen; ook een afgewezen concept houdt zijn plaats). Alternatief Q4 uit de onderwerpkalender gekozen.",
+      "botsing": false,
+      "status": "concept",
+      "revisies": [
+        {
+          "nr": 1,
+          "soort": "gegenereerd",
+          "hash": "35515e03ab2d",
+          "pad": "voorbeelden/revisies/W51-M2-thema/r1-gegenereerd.md",
+          "tijd": "2026-11-25T20:50:54+01:00"
+        }
+      ],
+      "handmatig": false,
+      "gen_hash": "35515e03ab2d",
+      "week": "W51",
+      "makelaar": "M2",
+      "keuze": "nieuw",
+      "pagina_id": null,
+      "keuzereden": "Voorkeur Q2 is in 2026-12 al gebruikt door W50-M2-thema (status: afgewezen; ook een afgewezen concept houdt zijn plaats). Alternatief Q4 uit de onderwerpkalender gekozen. Geen bestaande pagina voor deze zoekvraag: nieuwe pagina.",
+      "url_pad": "/gids/looproute-fietsenstalling",
+      "beeld": null,
+      "beeldstatus": "beeldtaak",
+      "taak": "F4 (hof8-fietsroute.jpg) past inhoudelijk, maar de rechten zijn verlopen. Zoek of laat een vrijgegeven beeld maken over: route naar fietsenstalling (Lindehof).",
+      "documentpad": "voorbeelden/W51/W51-M2-thema.md",
+      "kopij": {
+        "bron": "opgeslagen",
+        "bestand": "kopij/W51-M2-thema-04a342020d.json",
+        "fingerprint": "04a342020d"
+      },
+      "aandacht": [
+        "AANDACHT: Beeldtaak: F4 (hof8-fietsroute.jpg) past inhoudelijk, maar de rechten zijn verlopen. Zoek of laat een vrijgegeven beeld maken over: route naar fietsenstalling (Lindehof)."
+      ],
+      "bron_ids": [
+        "N4",
+        "Q4",
+        "B4"
+      ]
+    },
+    "W51-M1-terugblik": {
+      "status": "concept",
+      "revisies": [
+        {
+          "nr": 1,
+          "soort": "gegenereerd",
+          "hash": "d984285bf639",
+          "pad": "voorbeelden/revisies/W51-M1-terugblik/r1-gegenereerd.md",
+          "tijd": "2026-11-25T20:50:54+01:00"
+        }
+      ],
+      "handmatig": false,
+      "gen_hash": "d984285bf639",
+      "week": "W51",
+      "maand": "2026-12",
+      "makelaar": "M1",
+      "soort": "terugblik",
+      "aanleiding_id": "N3",
+      "keuze": "terugblik",
+      "pagina_id": null,
+      "keuzereden": "Weekterugblik op notitie N3.",
+      "botsing": false,
+      "url_pad": "/weekbericht/2026-w51-koperkade",
+      "beeld": "F3",
+      "beeldstatus": "vrijgegeven",
+      "taak": null,
+      "documentpad": "voorbeelden/W51/W51-M1-terugblik.md",
+      "kopij": {
+        "bron": "opgeslagen",
+        "bestand": "kopij/W51-M1-terugblik-42f81704e6.json",
+        "fingerprint": "42f81704e6"
+      },
+      "aandacht": [],
+      "bron_ids": [
+        "N3",
+        "B3"
+      ]
+    },
+    "W51-M2-terugblik": {
+      "status": "concept",
+      "revisies": [
+        {
+          "nr": 1,
+          "soort": "gegenereerd",
+          "hash": "9ca796263f54",
+          "pad": "voorbeelden/revisies/W51-M2-terugblik/r1-gegenereerd.md",
+          "tijd": "2026-11-25T20:50:54+01:00"
+        }
+      ],
+      "handmatig": false,
+      "gen_hash": "9ca796263f54",
+      "week": "W51",
+      "maand": "2026-12",
+      "makelaar": "M2",
+      "soort": "terugblik",
+      "aanleiding_id": "N4",
+      "keuze": "terugblik",
+      "pagina_id": null,
+      "keuzereden": "Weekterugblik op notitie N4.",
+      "botsing": false,
+      "url_pad": "/weekbericht/2026-w51-lindehof",
+      "beeld": null,
+      "beeldstatus": "beeldtaak",
+      "taak": "F4 (hof8-fietsroute.jpg) past inhoudelijk, maar de rechten zijn verlopen. Zoek of laat een vrijgegeven beeld maken over: route naar fietsenstalling (Lindehof).",
+      "documentpad": "voorbeelden/W51/W51-M2-terugblik.md",
+      "kopij": {
+        "bron": "opgeslagen",
+        "bestand": "kopij/W51-M2-terugblik-378f001a54.json",
+        "fingerprint": "378f001a54"
+      },
+      "aandacht": [
+        "AANDACHT: Beeldtaak: F4 (hof8-fietsroute.jpg) past inhoudelijk, maar de rechten zijn verlopen. Zoek of laat een vrijgegeven beeld maken over: route naar fietsenstalling (Lindehof)."
+      ],
+      "bron_ids": [
+        "N4",
+        "B4"
+      ]
+    }
+  },
+  "feedback": {
+    "FB-W50-M1-thema": {
+      "makelaar": "M1",
+      "week": "W50",
+      "van": "W50-M1-thema",
+      "soort": "goedgekeurd",
+      "tekst": "De redacteur paste je vorige thema aan: toegevoegd \"Meet thuis ook hoe breed je stuur is.\"",
+      "toegepast_in": "W51-M1-thema",
+      "waar": "Sectie 'Bereid je thuis voor': net als de zin die de redacteur in de fietsgids toevoegde ('Meet thuis ook hoe breed je stuur is.') bereidt de lezer thuis voor wat ter plekke gecontroleerd wordt."
+    },
+    "FB-W50-M2-thema": {
+      "makelaar": "M2",
+      "week": "W50",
+      "van": "W50-M2-thema",
+      "soort": "afgewezen",
+      "tekst": "Geef de lezer een concrete controle voor het volgende bezoek.",
+      "toegepast_in": "W51-M2-thema",
+      "waar": "Sectie 'Controle voor je volgende bezoek': zeven stappen die de lezer bij het volgende bezoek zelf uitvoert, langs de twee deuren en de haakse bocht (B4)."
+    }
+  },
+  "runs": [
+    {
+      "tijd": "2026-11-25T20:50:54+01:00",
+      "week": "W50",
+      "modus": "opgeslagen"
+    },
+    {
+      "tijd": "2026-11-25T20:50:54+01:00",
+      "week": "W50",
+      "modus": "opgeslagen"
+    },
+    {
+      "tijd": "2026-11-25T20:50:54+01:00",
+      "week": "W51",
+      "modus": "opgeslagen"
+    }
+  ]
+}

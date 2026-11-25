@@ -1,0 +1,55 @@
+{
+  "redactie": "Kade & Hof Wonen",
+  "taal": "nl",
+  "tijdzone": "Europe/Amsterdam",
+  "edities": [
+    {"id":"W50","aanleveren":"2026-12-07T09:00:00+01:00","beoogde_publicatie":"2026-12-09"},
+    {"id":"W51","aanleveren":"2026-12-14T09:00:00+01:00","beoogde_publicatie":"2026-12-16"}
+  ],
+  "profielen": [
+    {"id":"M1","naam":"Noor","gebied":"Koperkade","bio":"Noor begeleidt kopers aan de Koperkade.","voorbeeld":"Zet je fiets even neer. Loop vanaf de entree naar de berging. Past jouw fiets door beide deuren?","stijl":"Spreek de lezer aan met je. Begin bij een concrete handeling. Geef korte, praktische aanwijzingen."},
+    {"id":"M2","naam":"Ivo","gebied":"Lindehof","bio":"Ivo begeleidt doorstromers in Lindehof.","voorbeeld":"Op de plattegrond lijken de woonkamers even groot. Het verschil merk je wanneer je een tafel bij het raam zet.","stijl":"Beschrijf rustig twee opties. Leg het verschil uit met een waarneembaar detail. Spreek de lezer aan met je."}
+  ],
+  "weeknotities": [
+    {"id":"N1","week":"W50","makelaar":"M1","tekst":"Zes bezichtigingen. Vier bezoekers vroegen of hun bakfiets door de bergingsdeur past. Eén bezoeker nam een meetlint mee."},
+    {"id":"N2","week":"W50","makelaar":"M2","tekst":"Vier bezichtigingen. Twee bezoekers vergeleken de lichtinval in de woonkamer; één wilde op een ander tijdstip terugkomen."},
+    {"id":"N3","week":"W51","makelaar":"M1","tekst":"Drie bezichtigingen. Twee bezoekers wilden het terras zelf op verschillende tijdstippen zien."},
+    {"id":"N4","week":"W51","makelaar":"M2","tekst":"Vijf bezichtigingen. Drie bezoekers vroegen naar de route van de voordeur naar de fietsenstalling."}
+  ],
+  "feiten": [
+    {"id":"B1","gebied":"Koperkade","status":"vrijgegeven","tekst":"Bij gebouw Meander is de vrije doorgang van de buitenste bergingsdeur 1,10 m. De binnenste deur is niet ingemeten."},
+    {"id":"B2","gebied":"Lindehof","status":"vrijgegeven","tekst":"Bij de twee voorbeeldwoningen van Hof 8 ligt één woonkamer op het oosten en de andere op het westen."},
+    {"id":"B3","gebied":"Koperkade","status":"vrijgegeven","tekst":"De terrassen van huis 3 en huis 4 liggen respectievelijk op het zuiden en het oosten. Gemeten zonuren zijn niet beschikbaar."},
+    {"id":"B4","gebied":"Lindehof","status":"vrijgegeven","tekst":"De route vanaf de hoofdentree naar de fietsenstalling heeft twee deuren en een haakse bocht. De breedtes zijn niet vastgelegd."},
+    {"id":"X1","gebied":"Koperkade","status":"onbevestigd","tekst":"Een losse verkoopnotitie noemt een prijsstijging van 12%. Periode, methode en bron ontbreken."}
+  ],
+  "zoekvragen": [
+    {"id":"Q1","onderwerp":"fietsberging meten","vraag":"Hoe meet ik of mijn bakfiets in de berging past?","bestaand_pad":"/gids/fietsberging","aanwijzing":"Bestaande gids noemt alleen de buitenste deur. Werk de gids bij met een controle voor de volledige route."},
+    {"id":"Q2","onderwerp":"lichtinval woonkamer","vraag":"Wat is het verschil tussen een woonkamer op het oosten en op het westen?","bestaand_pad":null,"aanwijzing":"Geef de lezer een concrete vergelijking voor een tweede bezichtiging."},
+    {"id":"Q3","onderwerp":"terrasligging","vraag":"Waar let ik op bij een terras op het zuiden of het oosten?","bestaand_pad":null,"aanwijzing":"Verbind oriëntatie met een controle tijdens de bezichtiging."},
+    {"id":"Q4","onderwerp":"looproute fietsenstalling","vraag":"Hoe test ik de route van de entree naar een fietsenstalling?","bestaand_pad":null,"aanwijzing":"Neem de lezer vanaf de entree mee langs deuren en de bocht."}
+  ],
+  "bestaande_paginas": [
+    {"id":"P1","pad":"/gids/fietsberging","titel":"Past je fiets in de berging van Meander?","gebied":"Koperkade","status":"live","metatitel":"Fietsberging Meander: past je fiets? | Kade & Hof Wonen","metabeschrijving":"Zo controleer je of je fiets door de bergingsdeur van gebouw Meander aan de Koperkade past.","tags":["Koperkade","berging","fiets"],"beeld":"F1","bronnen":["B1"],"tekst":"De bergingen van gebouw Meander bereik je via de buitenste bergingsdeur. Die deur heeft een vrije doorgang van 1,10 m. Meet de breedte van je fiets op het breedste punt. Is je fiets smaller dan 1,10 m, dan past hij door de deur en kun je hem in je berging zetten. Twijfel je? Neem dan een meetlint mee naar de bezichtiging."},
+    {"id":"P2","pad":"/gids/bezichtiging-voorbereiden","titel":"Zo bereid je een bezichtiging voor","gebied":"alle","status":"live"},
+    {"id":"P3","pad":"/gids/terras-onderhouden","titel":"Je terras het hele jaar bruikbaar houden","gebied":"alle","status":"live"},
+    {"id":"P4","pad":"/koperkade","titel":"Wonen aan de Koperkade","gebied":"Koperkade","status":"live"},
+    {"id":"P5","pad":"/lindehof","titel":"Wonen in Lindehof","gebied":"Lindehof","status":"live"}
+  ],
+  "kalender": [
+    {"week":"W50","makelaar":"M1","voorkeur":"Q1","alternatief":null},
+    {"week":"W50","makelaar":"M2","voorkeur":"Q2","alternatief":null},
+    {"week":"W51","makelaar":"M1","voorkeur":"Q3","alternatief":null},
+    {"week":"W51","makelaar":"M2","voorkeur":"Q2","alternatief":"Q4"}
+  ],
+  "beeldregister": [
+    {"id":"F1","bestand":"meander-berging.jpg","gebied":"Koperkade","onderwerp":"berging en voordeur","recht":"vrijgegeven"},
+    {"id":"F2","bestand":"hof8-woonkamer.jpg","gebied":"Lindehof","onderwerp":"woonkamer en lichtinval","recht":"vrijgegeven"},
+    {"id":"F3","bestand":"terras-huis3.jpg","gebied":"Koperkade","onderwerp":"terras en ligging","recht":"vrijgegeven"},
+    {"id":"F4","bestand":"hof8-fietsroute.jpg","gebied":"Lindehof","onderwerp":"route naar fietsenstalling","recht":"verlopen"}
+  ],
+  "review": [
+    {"na":"W50","makelaar":"M1","soort":"thema","actie":"goedgekeurd_met_bewerking","bewaar_zin":"Meet thuis ook hoe breed je stuur is."},
+    {"na":"W50","makelaar":"M2","soort":"thema","actie":"afgewezen","reden":"Geef de lezer een concrete controle voor het volgende bezoek.","toepassen_op":"volgend thema van M2"}
+  ]
+}

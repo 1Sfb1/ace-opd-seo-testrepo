@@ -1,0 +1,47 @@
+{
+  "sleutel": "W51-M1-thema",
+  "vingerafdruk": "1927b26971",
+  "model": "Claude Opus 5.5 (claude-opus-5-5) in Claude Code, 25-11-2026; antwoord op de prompt met dezelfde vingerafdruk",
+  "prompt": "zie W51-M1-thema-1927b26971.txt in de map prompts/ van de werkmap",
+  "kop": "Terras op het zuiden of het oosten: waar let je op?",
+  "onderkop": "Zo controleer je tijdens de bezichtiging wanneer je terras zon en schaduw heeft",
+  "tekst": "Ga op het terras staan en kijk waar de zon nu valt. Een terras op het zuiden heeft vooral rond het midden van de dag zon. Een terras op het oosten heeft zon in de ochtend en later op de dag schaduw. Welke kant bij je past, hangt af van wanneer je buiten wilt zitten. Controleer het tijdens de bezichtiging zelf, want de zonuren zijn voor deze terrassen niet gemeten.\n\n## Aan de Koperkade\n\nHet terras van huis 3 ligt op het zuiden. Het terras van huis 4 ligt op het oosten. Hoeveel uur zon ze krijgen, weten we niet. Dat bekijk je dus zelf.\n\n## Bereid je thuis voor\n\nBedenk thuis op welke momenten je buiten wilt zitten. Bij het ontbijt? Na je werk? In het weekend midden op de dag? Schrijf die momenten op. Dan weet je bij de bezichtiging waar je op let.\n\n## Zo controleer je het tijdens de bezichtiging\n\n1. Noteer hoe laat het is als je op het terras staat.\n2. Kijk waar de zon valt en waar de schaduw ligt.\n3. Kijk wat die schaduw maakt: een muur, een schutting, een boom of een ander gebouw.\n4. Ga zitten op de plek waar je een tafel of stoel zou zetten. Zit je in de zon of in de schaduw?\n5. Leg dit naast de momenten die je thuis opschreef.\n6. Valt één van die momenten buiten je bezoek? Kom dan op dat tijdstip nog een keer terug.\n\nZo weet je na twee bezoeken of het terras zon heeft wanneer jij buiten wilt zitten.",
+  "metatitel": "Terras op het zuiden of oosten: waar let je op?",
+  "metabeschrijving": "Een terras op het zuiden of het oosten heeft op andere momenten zon. Noor laat zien hoe je dat tijdens de bezichtiging aan de Koperkade controleert.",
+  "tags": [
+    "Koperkade",
+    "terras",
+    "zon en schaduw"
+  ],
+  "waarom_nu": "Zoekvraag Q3 staat voor W51 in de kalender, en twee bezoekers wilden deze week het terras op verschillende tijdstippen zien (N3).",
+  "claims": [
+    {
+      "claim": "Het terras van huis 3 ligt op het zuiden, dat van huis 4 op het oosten",
+      "bron": "B3"
+    },
+    {
+      "claim": "De zonuren zijn voor deze terrassen niet gemeten",
+      "bron": "B3"
+    },
+    {
+      "claim": "Zuiden: zon rond het midden van de dag; oosten: zon in de ochtend",
+      "bron": "algemene kennis"
+    },
+    {
+      "claim": "Bezoekers wilden het terras op verschillende tijdstippen zien",
+      "bron": "N3"
+    }
+  ],
+  "open_vragen": [
+    "Gemeten zonuren zijn niet beschikbaar (B3). Laat de redactie ze meten? Dan kan een tijd in de tekst.",
+    "Beeld F3 toont het terras van huis 3 (zuiden). Er is geen beeld van huis 4 (oosten).",
+    "X1 (onbevestigd): prijsstijging van 12% uit een losse verkoopnotitie; niet gebruikt."
+  ],
+  "wijzigingen": [],
+  "feedback_verwerkt": [
+    {
+      "feedback": "FB-W50-M1-thema",
+      "waar": "Sectie 'Bereid je thuis voor': net als de zin die de redacteur in de fietsgids toevoegde ('Meet thuis ook hoe breed je stuur is.') bereidt de lezer thuis voor wat ter plekke gecontroleerd wordt."
+    }
+  ]
+}

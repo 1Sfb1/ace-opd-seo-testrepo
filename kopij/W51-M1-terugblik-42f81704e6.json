@@ -1,0 +1,41 @@
+{
+  "sleutel": "W51-M1-terugblik",
+  "vingerafdruk": "42f81704e6",
+  "model": "Claude Opus 5.5 (claude-opus-5-5) in Claude Code, 25-11-2026; antwoord op de prompt met dezelfde vingerafdruk",
+  "prompt": "zie W51-M1-terugblik-42f81704e6.txt in de map prompts/ van de werkmap",
+  "kop": "Kijk zelf wanneer de zon op het terras komt",
+  "onderkop": "Noor over haar week aan de Koperkade",
+  "tekst": "Ga op het terras staan en kijk om je heen. Waar valt de zon, en waar ligt de schaduw? Dat wilden twee bezoekers deze week zelf zien.\n\nIk had drie bezichtigingen aan de Koperkade. Twee bezoekers wilden het terras op verschillende tijdstippen bekijken. Een goed plan, want gemeten zonuren hebben we niet. Wat je zelf ziet, is dan je beste informatie.\n\nAan de Koperkade verschilt het per huis. Het terras van huis 3 ligt op het zuiden, dat van huis 4 op het oosten.\n\nWil je het ook zo doen?\n\n- Noteer bij je eerste bezoek hoe laat het is en waar de zon op het terras ligt.\n- Kom op een ander tijdstip terug en kijk opnieuw.\n- Leg de twee momenten naast elkaar.\n\nIn de nieuwe gids over terrassen op het zuiden en het oosten lees je waar je verder op let.",
+  "metatitel": "Weekbericht Koperkade: wanneer komt de zon op het terras?",
+  "metabeschrijving": "Noor over haar week aan de Koperkade: bezoekers wilden het terras op verschillende tijdstippen zien. Zo vergelijk je zon en schaduw zelf.",
+  "tags": [
+    "Koperkade",
+    "terras",
+    "bezichtiging"
+  ],
+  "waarom_nu": "Twee van de drie bezoekers wilden deze week het terras op verschillende tijdstippen zien (N3). In dezelfde editie verschijnt de gids over terrassen (Q3).",
+  "claims": [
+    {
+      "claim": "Drie bezichtigingen deze week",
+      "bron": "N3"
+    },
+    {
+      "claim": "Twee bezoekers wilden het terras op verschillende tijdstippen zien",
+      "bron": "N3"
+    },
+    {
+      "claim": "Gemeten zonuren zijn niet beschikbaar",
+      "bron": "B3"
+    },
+    {
+      "claim": "Het terras van huis 3 ligt op het zuiden, dat van huis 4 op het oosten",
+      "bron": "B3"
+    }
+  ],
+  "open_vragen": [
+    "X1 (onbevestigd): prijsstijging van 12% uit een losse verkoopnotitie; niet gebruikt.",
+    "Mag de laatste zin een link krijgen naar de nieuwe terrasgids (/gids/terrasligging)?"
+  ],
+  "wijzigingen": [],
+  "feedback_verwerkt": []
+}

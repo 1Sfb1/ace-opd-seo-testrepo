@@ -1,0 +1,8 @@
+{
+  "modus": "opgeslagen",
+  "toelichting_modus": "opgeslagen: gebruik modeluitvoer uit kopij/ als die bij deze invoer hoort, anders een sjabloon. sjabloon: altijd het sjabloon. Geen van beide heeft een sleutel of netwerk nodig.",
+  "max_woorden": 600,
+  "metatitel_max": 60,
+  "metabeschrijving_max": 160,
+  "werkmappen": ["voorbeelden", "uitvoer"]
+}

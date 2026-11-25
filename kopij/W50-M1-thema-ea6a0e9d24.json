@@ -1,0 +1,79 @@
+{
+  "sleutel": "W50-M1-thema",
+  "vingerafdruk": "ea6a0e9d24",
+  "model": "Claude Opus 5.5 (claude-opus-5-5) in Claude Code, 25-11-2026; antwoord op de prompt met dezelfde vingerafdruk",
+  "prompt": "zie W50-M1-thema-ea6a0e9d24.txt in de map prompts/ van de werkmap",
+  "kop": "Past je bakfiets in de berging van Meander?",
+  "onderkop": "Meet niet alleen de buitenste deur, maar de hele route tot in je berging",
+  "tekst": "Zet je bakfiets even neer en pak een meetlint. Meet de breedste plek van je fiets. Loop daarna vanaf de entree naar de berging en meet elke deur op die route. Pas als je fiets door alle deuren past, weet je dat hij in je berging komt.\n\n## Wat we al weten\n\nDe bergingen van gebouw Meander bereik je via de buitenste bergingsdeur. Die deur heeft een vrije doorgang van 1,10 m. Is je fiets smaller, dan komt hij door die eerste deur.\n\nDaarmee ben je er nog niet. Na de buitenste deur volgt een binnenste deur, en die is nog niet ingemeten. Die maat controleer je dus zelf.\n\n## Zo controleer je de hele route\n\n1. Meet thuis je bakfiets op de breedste plek en schrijf die maat op.\n2. Neem het meetlint mee naar de bezichtiging.\n3. Begin bij de entree. Loop de route die je straks met je fiets neemt.\n4. Kijk bij de buitenste bergingsdeur of je fiets past. Hier heb je 1,10 m.\n5. Meet de binnenste deur. Zet de deur helemaal open en meet de opening op de smalste plek.\n6. Kom je daarna nog een deur of een smalle doorgang tegen? Meet die ook.\n\nIs één van die maten kleiner dan je fiets, dan past hij niet. Schrijf alle maten op, dan vergelijk je thuis rustig.\n\n## Twijfel je?\n\nNeem je meetlint mee naar de bezichtiging. Dan lopen we de route samen.",
+  "metatitel": "Past je bakfiets in de berging van Meander? Zo meet je het",
+  "metabeschrijving": "De buitenste bergingsdeur van Meander heeft 1,10 m vrije doorgang; de binnenste deur is niet ingemeten. Zo controleer je de hele route.",
+  "tags": [
+    "Koperkade",
+    "fietsberging",
+    "bakfiets"
+  ],
+  "waarom_nu": "Vier van de zes bezoekers vroegen deze week of hun bakfiets door de bergingsdeur past (N1). De huidige gids noemt alleen de buitenste deur en belooft daardoor te veel.",
+  "claims": [
+    {
+      "claim": "De buitenste bergingsdeur van Meander heeft een vrije doorgang van 1,10 m",
+      "bron": "B1"
+    },
+    {
+      "claim": "De binnenste deur is niet ingemeten",
+      "bron": "B1"
+    },
+    {
+      "claim": "De huidige gids noemt alleen de buitenste deur",
+      "bron": "P1, Q1"
+    }
+  ],
+  "open_vragen": [
+    "Kan de binnenste deur van Meander worden ingemeten? Dan kan de maat in stap 5 en hoeft de lezer minder zelf te doen.",
+    "Zijn er op de route van entree naar berging nog meer deuren of drempels? Stap 6 vangt dat op zonder iets te beweren.",
+    "X1 (onbevestigd): prijsstijging van 12% uit een losse verkoopnotitie; niet gebruikt."
+  ],
+  "wijzigingen": [
+    {
+      "soort": "behouden",
+      "passage": "De bergingen van gebouw Meander bereik je via de buitenste bergingsdeur. Die deur heeft een vrije doorgang van 1,10 m.",
+      "toelichting": "Klopt (B1). Staat nu onder 'Wat we al weten'."
+    },
+    {
+      "soort": "behouden",
+      "passage": "Meet de breedte van je fiets op het breedste punt.",
+      "toelichting": "Nu stap 1, aangevuld met 'thuis' en 'schrijf die maat op'."
+    },
+    {
+      "soort": "vervangen",
+      "passage": "Is je fiets smaller dan 1,10 m, dan past hij door de deur en kun je hem in je berging zetten.",
+      "toelichting": "Te stellig: de binnenste deur is niet ingemeten (B1). Nu: 'dan komt hij door die eerste deur', gevolgd door de controle van de hele route."
+    },
+    {
+      "soort": "vervangen",
+      "passage": "Twijfel je? Neem dan een meetlint mee naar de bezichtiging.",
+      "toelichting": "Het meetlint staat nu in stap 2. 'Twijfel je?' wordt een uitnodiging om de route samen te lopen."
+    },
+    {
+      "soort": "toegevoegd",
+      "passage": "Eerste alinea en het stappenplan 'Zo controleer je de hele route'",
+      "toelichting": "Beantwoordt zoekvraag Q1 en de aanwijzing: een controle voor de volledige route."
+    },
+    {
+      "soort": "vervangen",
+      "passage": "Titel 'Past je fiets in de berging van Meander?'",
+      "toelichting": "Wordt 'Past je bakfiets ...', zoals de zoekvraag."
+    },
+    {
+      "soort": "vervangen",
+      "passage": "Metatitel, metabeschrijving en tags",
+      "toelichting": "Bakfiets en de hele route erin. Tag Koperkade blijft; 'berging' en 'fiets' worden 'fietsberging' en 'bakfiets'."
+    },
+    {
+      "soort": "behouden",
+      "passage": "Beeld F1 (meander-berging.jpg)",
+      "toelichting": "Past nog en is vrijgegeven."
+    }
+  ],
+  "feedback_verwerkt": []
+}
